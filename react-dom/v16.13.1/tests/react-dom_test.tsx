@@ -4,7 +4,7 @@
 import React from "https://cdn.pika.dev/@pika/react@v16.13.1";
 // @deno-types="../server.d.ts"
 import ReactDomServer from "https://dev.jspm.io/react-dom@16.13.1/server.js";
-import { assertEquals } from "../../../../testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@v0.40.0/testing/asserts.ts";
 
 class ClassComponent extends React.Component {
   render() {

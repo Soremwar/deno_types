@@ -2,11 +2,9 @@
 
 // @deno-types="../react.d.ts"
 import React from "./react_mock.js";
-import { assertEquals } from "../../../../testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@v0.40.0/testing/asserts.ts";
 
-const { test } = Deno;
-
-test({
+Deno.test({
   name: "JSX can be rendered",
   fn() {
     class Component {
