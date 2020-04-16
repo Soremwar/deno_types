@@ -18,12 +18,12 @@ const FunctionalComponent = () => (
   <h1>Testing functional component</h1>
 );
 
-function NestedComponent (){
+function NestedComponent() {
   return (
     <div>
       <span>Testing nested components</span>,
-      <ClassComponent/>
-      <FunctionalComponent/>
+      <ClassComponent />
+      <FunctionalComponent />
     </div>
   );
 }
@@ -45,15 +45,15 @@ Deno.test({
     );
     assertEquals(
       ReactDomServer.renderToStaticMarkup(<ClassComponent />),
-      '<h1>Testing class component</h1>',
+      "<h1>Testing class component</h1>",
     );
     assertEquals(
       ReactDomServer.renderToStaticMarkup(<FunctionalComponent />),
-      '<h1>Testing functional component</h1>',
+      "<h1>Testing functional component</h1>",
     );
     assertEquals(
       ReactDomServer.renderToStaticMarkup(<NestedComponent />),
-      '<div><span>Testing nested components</span>,<h1>Testing class component</h1><h1>Testing functional component</h1></div>',
+      "<div><span>Testing nested components</span>,<h1>Testing class component</h1><h1>Testing functional component</h1></div>",
     );
   },
 });

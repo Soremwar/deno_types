@@ -1,4 +1,4 @@
-# std/types
+# Deno Definition Types
 
 Contains type definitions for popular external packages that are compatible with
 Deno.

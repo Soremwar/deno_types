@@ -17,7 +17,7 @@ test({
 
     assertEquals(
       new Component().render(),
-      `{"type":"div","props":null,"children":[]}`
+      `{"type":"div","props":null,"children":[]}`,
     );
-  }
+  },
 });
