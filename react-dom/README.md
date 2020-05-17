@@ -9,7 +9,7 @@ Facebook's React library.
 
 ```typescript
 // @deno-types="https://deno.land/x/types/react-dom/v16.13.1/react-dom.d.ts"
-import ReactDOM from "https://cdn.pika.dev/@pika/react-dom@v16.13.1";
+import ReactDOM from "https://cdn.pika.dev/react-dom@16.13.1";
 ```
 
 ```typescript
@@ -25,7 +25,15 @@ covers all cases
 React Dom Server is partially implemented due to current incompatibility with
 Node's Readable Streams.
 
+PIKA.DEV does **not** provide an importable build of ReactDomServer. Fallback
+on JSMP.IO for using it.
+
 Non supported functions:
 
 1. renderToNodeStream
 1. renderToStaticNodeStream
+
+TODO
+
+- [ ] Add tests for ReactDom
+- [x] Add tests for ReactDomServer
