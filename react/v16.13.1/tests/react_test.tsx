@@ -1,5 +1,3 @@
-// Copyright 2018-2020 the Deno authors. All rights reserved. MIT license.
-
 // @deno-types="../react.d.ts"
 import React from "./react_mock.js";
 import { assertEquals } from "../../../test_deps.ts";

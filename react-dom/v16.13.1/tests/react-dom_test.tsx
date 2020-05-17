@@ -1,5 +1,3 @@
-// Copyright 2018-2020 the Deno authors. All rights reserved. MIT license.
-
 // @deno-types="../../../react/v16.13.1/react.d.ts"
 import React from "https://cdn.pika.dev/react@16.13.1";
 // @deno-types="../server.d.ts"

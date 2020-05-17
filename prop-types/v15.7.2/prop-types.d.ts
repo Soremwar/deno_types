@@ -8,7 +8,6 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
 
-/* eslint-disable */
 export type ReactComponentLike =
   | string
   | ((props: any, context?: any) => any)
