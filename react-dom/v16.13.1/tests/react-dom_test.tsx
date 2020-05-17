@@ -4,7 +4,7 @@
 import React from "https://cdn.pika.dev/react@16.13.1";
 // @deno-types="../server.d.ts"
 import ReactDomServer from "https://dev.jspm.io/react-dom@16.13.1/server.js";
-import { assertEquals } from "https://deno.land/std@0.51.0/testing/asserts.ts";
+import { assertEquals } from "../../../test_deps.ts";
 
 class ClassComponent extends React.Component {
   render() {
@@ -29,7 +29,7 @@ function NestedComponent() {
 }
 
 Deno.test({
-  name: "ReactDomServer is typed to render",
+  name: "ReactDomServer definitions",
   fn() {
     assertEquals(
       ReactDomServer.renderToString(<ClassComponent />),
