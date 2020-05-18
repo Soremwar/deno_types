@@ -1,7 +1,7 @@
-# Deno Declaration Files
+# NPM compatibility list and declaration files for Deno
 
-Contains type definitions for popular external packages that are compatible with
-Deno.
+This repository hosts a list of NPM libraries compatible with Deno as well as
+their definition files to interoperate with TypeScript inside the Deno compiler.
 
 Because Deno only resolves fully qualified file names, type definitions that
 import other type definitions might not work with Deno. Also, when some type
