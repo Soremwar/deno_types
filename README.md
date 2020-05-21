@@ -17,7 +17,7 @@ currently you would need to use the compiler hint of `@deno-types`. For example
 to import React:
 
 ```typescript
-// @deno-types="https://deno.land/x/types/react/@16.13.1/react.d.ts"
+// @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 import React from "https://cdn.pika.dev/react@16.13.1";
 ```
 
