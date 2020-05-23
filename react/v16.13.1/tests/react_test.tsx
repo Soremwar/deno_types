@@ -3,7 +3,7 @@ import React from "./react_mock.js";
 import { assertEquals } from "../../../test_deps.ts";
 
 Deno.test({
-  name: "React definitions",
+  name: "React integration",
   fn() {
     class Component {
       render() {

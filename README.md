@@ -8,7 +8,14 @@ import other type definitions might not work with Deno. Also, when some type
 definition supply some global interfaces, they can conflict with Deno. The types
 located here have been validated to work with Deno.
 
-### Using the library
+## Available libraries
+
+- PropTypes
+- React
+- ReactDOM
+- RxJS
+
+## Using the library
 
 There are several ways these type definitions can be referenced. Likely the
 "best" way is that the CDN provider provides a header of `X-TypeScript-Types`
@@ -35,7 +42,7 @@ namespace, so most of the time it might not be suited to work along with this
 definition library.
 
 
-### Contributing
+## Contributing
 
 Feel free to open an issue about a module you would like to see in this library.
 If you would like to add a package to this list, open a pull request and I'll

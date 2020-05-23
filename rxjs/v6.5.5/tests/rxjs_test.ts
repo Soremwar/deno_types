@@ -11,7 +11,7 @@ const testScheduler = new TestScheduler((actual, expected) => {
   assertEquals(actual, expected);
 });
 
-Deno.test("Integration test", function (): void {
+Deno.test("RxJS integration", function (): void {
   testScheduler.run(({ hot, expectObservable }) => {
     const source = hot('--a--a--a--a--a--a--a--');
     const sub1 = '      --^-----------!';

@@ -27,7 +27,7 @@ function NestedComponent() {
 }
 
 Deno.test({
-  name: "ReactDomServer definitions",
+  name: "ReactDomServer integration",
   fn() {
     assertEquals(
       ReactDomServer.renderToString(<ClassComponent />),
