@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Delays the emission of items from the source Observable by a given timeout or
  * until a given Date.
@@ -48,4 +48,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * Observable by the specified timeout or Date.
  * @name delay
  */
-export declare function delay<T>(delay: number | Date, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+export declare function delay<T>(
+  delay: number | Date,
+  scheduler?: SchedulerLike,
+): MonoTypeOperatorFunction<T>;

@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * If the source observable completes without emitting a value, it will emit
  * an error. The error will be created at that time by the optional
@@ -29,4 +29,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * error to be thrown when the source observable completes without emitting a
  * value.
  */
-export declare function throwIfEmpty<T>(errorFactory?: (() => any)): MonoTypeOperatorFunction<T>;
+export declare function throwIfEmpty<T>(
+  errorFactory?: (() => any),
+): MonoTypeOperatorFunction<T>;

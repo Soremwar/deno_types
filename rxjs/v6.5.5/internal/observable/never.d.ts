@@ -1,4 +1,4 @@
-import { Observable } from '../Observable.d.ts';
+import { Observable } from "../Observable.d.ts";
 /**
  * An Observable that emits no items to the Observer and never completes.
  *

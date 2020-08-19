@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { ObservedValueOf, ObservableInput } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { ObservedValueOf, ObservableInput } from "../types.d.ts";
 /**
  * Creates an Observable that, on subscribe, calls an Observable factory to
  * make an Observable for each new Observer.
@@ -49,4 +49,6 @@ import { ObservedValueOf, ObservableInput } from '../types.d.ts';
  * @name defer
  * @owner Observable
  */
-export declare function defer<R extends ObservableInput<any> | void>(observableFactory: () => R): Observable<ObservedValueOf<R>>;
+export declare function defer<R extends ObservableInput<any> | void>(
+  observableFactory: () => R,
+): Observable<ObservedValueOf<R>>;

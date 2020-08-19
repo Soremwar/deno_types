@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Emits only the index of the first value emitted by the source Observable that
  * meets some condition.
@@ -39,4 +39,7 @@ import { OperatorFunction } from '../types.d.ts';
  * matches the condition.
  * @name find
  */
-export declare function findIndex<T>(predicate: (value: T, index: number, source: Observable<T>) => boolean, thisArg?: any): OperatorFunction<T, number>;
+export declare function findIndex<T>(
+  predicate: (value: T, index: number, source: Observable<T>) => boolean,
+  thisArg?: any,
+): OperatorFunction<T, number>;

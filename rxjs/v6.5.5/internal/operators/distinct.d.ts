@@ -1,8 +1,8 @@
-import { Observable } from '../Observable.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { OuterSubscriber } from '../OuterSubscriber.d.ts';
-import { InnerSubscriber } from '../InnerSubscriber.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { OuterSubscriber } from "../OuterSubscriber.d.ts";
+import { InnerSubscriber } from "../InnerSubscriber.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
  *
@@ -70,19 +70,32 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable} An Observable that emits items from the source Observable with distinct values.
  * @name distinct
  */
-export declare function distinct<T, K>(keySelector?: (value: T) => K, flushes?: Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function distinct<T, K>(
+  keySelector?: (value: T) => K,
+  flushes?: Observable<any>,
+): MonoTypeOperatorFunction<T>;
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
  * @extends {Ignored}
  */
 export declare class DistinctSubscriber<T, K> extends OuterSubscriber<T, T> {
-    private keySelector?;
-    private values;
-    constructor(destination: Subscriber<T>, keySelector?: ((value: T) => K) | undefined, flushes?: Observable<any>);
-    notifyNext(outerValue: T, innerValue: T, outerIndex: number, innerIndex: number, innerSub: InnerSubscriber<T, T>): void;
-    notifyError(error: any, innerSub: InnerSubscriber<T, T>): void;
-    protected _next(value: T): void;
-    private _useKeySelector;
-    private _finalizeNext;
+  private keySelector?;
+  private values;
+  constructor(
+    destination: Subscriber<T>,
+    keySelector?: ((value: T) => K) | undefined,
+    flushes?: Observable<any>,
+  );
+  notifyNext(
+    outerValue: T,
+    innerValue: T,
+    outerIndex: number,
+    innerIndex: number,
+    innerSub: InnerSubscriber<T, T>,
+  ): void;
+  notifyError(error: any, innerSub: InnerSubscriber<T, T>): void;
+  protected _next(value: T): void;
+  private _useKeySelector;
+  private _finalizeNext;
 }

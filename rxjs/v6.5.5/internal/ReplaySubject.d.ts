@@ -1,7 +1,7 @@
-import { Subject } from './Subject.d.ts';
-import { TimestampProvider } from './types.d.ts';
-import { Subscriber } from './Subscriber.d.ts';
-import { Subscription } from './Subscription.d.ts';
+import { Subject } from "./Subject.d.ts";
+import { TimestampProvider } from "./types.d.ts";
+import { Subscriber } from "./Subscriber.d.ts";
+import { Subscription } from "./Subscription.d.ts";
 /**
  * A variant of {@link Subject} that "replays" old values to new subscribers by emitting them when they first subscribe.
  *
@@ -33,22 +33,26 @@ import { Subscription } from './Subscription.d.ts';
  * {@see shareReplay}
  */
 export declare class ReplaySubject<T> extends Subject<T> {
-    private timestampProvider;
-    private _events;
-    private _bufferSize;
-    private _windowTime;
-    private _infiniteTimeWindow;
-    /**
+  private timestampProvider;
+  private _events;
+  private _bufferSize;
+  private _windowTime;
+  private _infiniteTimeWindow;
+  /**
      * @param bufferSize The size of the buffer to replay on subscription
      * @param windowTime The amount of time the buffered items will say buffered
      * @param timestampProvider An object with a `now()` method that provides the current timestamp. This is used to
      * calculate the amount of time something has been buffered.
      */
-    constructor(bufferSize?: number, windowTime?: number, timestampProvider?: TimestampProvider);
-    private nextInfiniteTimeWindow;
-    private nextTimeWindow;
-    /** @deprecated Remove in v8. This is an internal implementation detail, do not use. */
-    _subscribe(subscriber: Subscriber<T>): Subscription;
-    private _getNow;
-    private _trimBufferThenGetEvents;
+  constructor(
+    bufferSize?: number,
+    windowTime?: number,
+    timestampProvider?: TimestampProvider,
+  );
+  private nextInfiniteTimeWindow;
+  private nextTimeWindow;
+  /** @deprecated Remove in v8. This is an internal implementation detail, do not use. */
+  _subscribe(subscriber: Subscriber<T>): Subscription;
+  private _getNow;
+  private _trimBufferThenGetEvents;
 }

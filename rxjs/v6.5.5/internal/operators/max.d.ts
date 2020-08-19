@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * The Max operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
  * and when source Observable completes it emits a single item: the item with the largest value.
@@ -43,4 +43,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable} An Observable that emits item with the largest value.
  * @name max
  */
-export declare function max<T>(comparer?: (x: T, y: T) => number): MonoTypeOperatorFunction<T>;
+export declare function max<T>(
+  comparer?: (x: T, y: T) => number,
+): MonoTypeOperatorFunction<T>;

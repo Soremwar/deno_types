@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Emits the most recently emitted value from the source Observable whenever
  * another Observable, the `notifier`, emits.
@@ -39,4 +39,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * emits value or completes.
  * @name sample
  */
-export declare function sample<T>(notifier: Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function sample<T>(
+  notifier: Observable<any>,
+): MonoTypeOperatorFunction<T>;

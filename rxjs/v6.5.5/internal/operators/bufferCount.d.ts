@@ -1,4 +1,4 @@
-import { OperatorFunction } from '../types.d.ts';
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Buffers the source Observable values until the size hits the maximum
  * `bufferSize` given.
@@ -53,4 +53,7 @@ import { OperatorFunction } from '../types.d.ts';
  * @return {Observable<T[]>} An Observable of arrays of buffered values.
  * @name bufferCount
  */
-export declare function bufferCount<T>(bufferSize: number, startBufferEvery?: number | null): OperatorFunction<T, T[]>;
+export declare function bufferCount<T>(
+  bufferSize: number,
+  startBufferEvery?: number | null,
+): OperatorFunction<T, T[]>;

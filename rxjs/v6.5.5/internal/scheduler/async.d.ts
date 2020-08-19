@@ -1,4 +1,4 @@
-import { AsyncScheduler } from './AsyncScheduler.d.ts';
+import { AsyncScheduler } from "./AsyncScheduler.d.ts";
 /**
  *
  * Async Scheduler

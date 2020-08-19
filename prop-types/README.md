@@ -10,7 +10,7 @@ React environment.
 ### Usage Examples
 
 ```typescript
-// @deno-types="https://deno.land/x/types/prop-types/v15.7.2/prop-types.d.ts"
+// @deno-types="https://denopkg.com/soremwar/deno_types/prop-types/v15.7.2/prop-types.d.ts"
 import PropTypes from "https://cdn.pika.dev/prop-types@15.7.2";
 ```
 

@@ -1,7 +1,7 @@
 export interface ObjectUnsubscribedError extends Error {
 }
 export interface ObjectUnsubscribedErrorCtor {
-    new (): ObjectUnsubscribedError;
+  new (): ObjectUnsubscribedError;
 }
 /**
  * An error thrown when an action is invalid because the object has been

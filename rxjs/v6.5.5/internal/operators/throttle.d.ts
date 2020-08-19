@@ -1,7 +1,7 @@
-import { MonoTypeOperatorFunction, SubscribableOrPromise } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SubscribableOrPromise } from "../types.d.ts";
 export interface ThrottleConfig {
-    leading?: boolean;
-    trailing?: boolean;
+  leading?: boolean;
+  trailing?: boolean;
 }
 export declare const defaultThrottleConfig: ThrottleConfig;
 /**
@@ -49,4 +49,7 @@ export declare const defaultThrottleConfig: ThrottleConfig;
  * limit the rate of emissions from the source.
  * @name throttle
  */
-export declare function throttle<T>(durationSelector: (value: T) => SubscribableOrPromise<any>, config?: ThrottleConfig): MonoTypeOperatorFunction<T>;
+export declare function throttle<T>(
+  durationSelector: (value: T) => SubscribableOrPromise<any>,
+  config?: ThrottleConfig,
+): MonoTypeOperatorFunction<T>;

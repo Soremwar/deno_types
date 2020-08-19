@@ -1,5 +1,5 @@
-import { SchedulerAction, SchedulerLike } from '../types.d.ts';
-import { Observable } from '../Observable.d.ts';
+import { SchedulerAction, SchedulerLike } from "../types.d.ts";
+import { Observable } from "../Observable.d.ts";
 /**
  * Creates an Observable that emits a sequence of numbers within a specified
  * range.
@@ -47,6 +47,10 @@ import { Observable } from '../Observable.d.ts';
  * @name range
  * @owner Observable
  */
-export declare function range(start?: number, count?: number, scheduler?: SchedulerLike): Observable<number>;
+export declare function range(
+  start?: number,
+  count?: number,
+  scheduler?: SchedulerLike,
+): Observable<number>;
 /** @internal */
 export declare function dispatch(this: SchedulerAction<any>, state: any): void;

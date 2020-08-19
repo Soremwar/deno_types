@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SubscribableOrPromise } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SubscribableOrPromise } from "../types.d.ts";
 /**
  * Emits a notification from the source Observable only after a particular time span
  * determined by another Observable has passed without another source emission.
@@ -57,4 +57,6 @@ import { MonoTypeOperatorFunction, SubscribableOrPromise } from '../types.d.ts';
  * `durationSelector`, and may drop some values if they occur too frequently.
  * @name debounce
  */
-export declare function debounce<T>(durationSelector: (value: T) => SubscribableOrPromise<any>): MonoTypeOperatorFunction<T>;
+export declare function debounce<T>(
+  durationSelector: (value: T) => SubscribableOrPromise<any>,
+): MonoTypeOperatorFunction<T>;

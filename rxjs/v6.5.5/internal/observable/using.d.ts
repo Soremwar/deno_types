@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { Unsubscribable, ObservableInput } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { Unsubscribable, ObservableInput } from "../types.d.ts";
 /**
  * Creates an Observable that uses a resource which will be disposed at the same time as the Observable.
  *
@@ -28,4 +28,9 @@ import { Unsubscribable, ObservableInput } from '../types.d.ts';
  * @return {Observable<T>} An Observable that behaves the same as Observable returned by `observableFactory`, but
  * which - when completed, errored or unsubscribed - will also call `unsubscribe` on created resource object.
  */
-export declare function using<T>(resourceFactory: () => Unsubscribable | void, observableFactory: (resource: Unsubscribable | void) => ObservableInput<T> | void): Observable<T>;
+export declare function using<T>(
+  resourceFactory: () => Unsubscribable | void,
+  observableFactory: (
+    resource: Unsubscribable | void,
+  ) => ObservableInput<T> | void,
+): Observable<T>;

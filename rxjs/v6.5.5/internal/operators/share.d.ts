@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one
  * Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will

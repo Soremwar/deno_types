@@ -1,7 +1,7 @@
-import { Operator } from '../Operator.d.ts';
-import { Observable } from '../Observable.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { Observer, OperatorFunction } from '../types.d.ts';
+import { Operator } from "../Operator.d.ts";
+import { Observable } from "../Observable.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { Observer, OperatorFunction } from "../types.d.ts";
 /**
  * Compares all values of two observables in sequence using an optional comparator function
  * and returns an observable of a single boolean value representing whether or not the two sequences
@@ -58,12 +58,18 @@ import { Observer, OperatorFunction } from '../types.d.ts';
  * the values emitted by both observables were equal in sequence.
  * @name sequenceEqual
  */
-export declare function sequenceEqual<T>(compareTo: Observable<T>, comparator?: (a: T, b: T) => boolean): OperatorFunction<T, boolean>;
+export declare function sequenceEqual<T>(
+  compareTo: Observable<T>,
+  comparator?: (a: T, b: T) => boolean,
+): OperatorFunction<T, boolean>;
 export declare class SequenceEqualOperator<T> implements Operator<T, boolean> {
-    private compareTo;
-    private comparator?;
-    constructor(compareTo: Observable<T>, comparator?: ((a: T, b: T) => boolean) | undefined);
-    call(subscriber: Subscriber<boolean>, source: any): any;
+  private compareTo;
+  private comparator?;
+  constructor(
+    compareTo: Observable<T>,
+    comparator?: ((a: T, b: T) => boolean) | undefined,
+  );
+  call(subscriber: Subscriber<boolean>, source: any): any;
 }
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -71,16 +77,20 @@ export declare class SequenceEqualOperator<T> implements Operator<T, boolean> {
  * @extends {Ignored}
  */
 export declare class SequenceEqualSubscriber<T, R> extends Subscriber<T> {
-    private compareTo;
-    private comparator?;
-    private _a;
-    private _b;
-    private _oneComplete;
-    constructor(destination: Observer<R>, compareTo: Observable<T>, comparator?: ((a: T, b: T) => boolean) | undefined);
-    protected _next(value: T): void;
-    _complete(): void;
-    checkValues(): void;
-    emit(value: boolean): void;
-    nextB(value: T): void;
-    completeB(): void;
+  private compareTo;
+  private comparator?;
+  private _a;
+  private _b;
+  private _oneComplete;
+  constructor(
+    destination: Observer<R>,
+    compareTo: Observable<T>,
+    comparator?: ((a: T, b: T) => boolean) | undefined,
+  );
+  protected _next(value: T): void;
+  _complete(): void;
+  checkValues(): void;
+  emit(value: boolean): void;
+  nextB(value: T): void;
+  completeB(): void;
 }

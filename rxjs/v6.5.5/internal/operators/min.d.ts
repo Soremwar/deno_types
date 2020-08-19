@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * The Min operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
  * and when source Observable completes it emits a single item: the item with the smallest value.
@@ -42,4 +42,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable<R>} An Observable that emits item with the smallest value.
  * @name min
  */
-export declare function min<T>(comparer?: (x: T, y: T) => number): MonoTypeOperatorFunction<T>;
+export declare function min<T>(
+  comparer?: (x: T, y: T) => number,
+): MonoTypeOperatorFunction<T>;

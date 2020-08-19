@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Emits only the first `count` values emitted by the source Observable.
  *

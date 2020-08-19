@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that skips items emitted by the source Observable until a second Observable emits an item.
  *
@@ -38,4 +38,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * an item, then emits the remaining items.
  * @name skipUntil
  */
-export declare function skipUntil<T>(notifier: Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function skipUntil<T>(
+  notifier: Observable<any>,
+): MonoTypeOperatorFunction<T>;

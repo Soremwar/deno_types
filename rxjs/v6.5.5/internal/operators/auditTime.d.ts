@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Ignores source values for `duration` milliseconds, then emits the most recent
  * value from the source Observable, then repeats this process.
@@ -47,4 +47,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * emissions from the source Observable.
  * @name auditTime
  */
-export declare function auditTime<T>(duration: number, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+export declare function auditTime<T>(
+  duration: number,
+  scheduler?: SchedulerLike,
+): MonoTypeOperatorFunction<T>;

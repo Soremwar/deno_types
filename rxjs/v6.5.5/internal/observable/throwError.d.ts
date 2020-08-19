@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
 /**
  * Creates an Observable that emits no items to the Observer and immediately
  * emits an error notification.
@@ -64,4 +64,7 @@ import { SchedulerLike } from '../types.d.ts';
  * @name throwError
  * @owner Observable
  */
-export declare function throwError(error: any, scheduler?: SchedulerLike): Observable<never>;
+export declare function throwError(
+  error: any,
+  scheduler?: SchedulerLike,
+): Observable<never>;

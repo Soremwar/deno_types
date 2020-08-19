@@ -1,6 +1,6 @@
-import { Operator } from '../Operator.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Operator } from "../Operator.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Applies a given `project` function to each value emitted by the source
  * Observable, and emits the resulting values as an Observable.
@@ -39,10 +39,13 @@ import { OperatorFunction } from '../types.d.ts';
  * Observable transformed by the given `project` function.
  * @name map
  */
-export declare function map<T, R>(project: (value: T, index: number) => R, thisArg?: any): OperatorFunction<T, R>;
+export declare function map<T, R>(
+  project: (value: T, index: number) => R,
+  thisArg?: any,
+): OperatorFunction<T, R>;
 export declare class MapOperator<T, R> implements Operator<T, R> {
-    private project;
-    private thisArg;
-    constructor(project: (value: T, index: number) => R, thisArg: any);
-    call(subscriber: Subscriber<R>, source: any): any;
+  private project;
+  private thisArg;
+  constructor(project: (value: T, index: number) => R, thisArg: any);
+  call(subscriber: Subscriber<R>, source: any): any;
 }

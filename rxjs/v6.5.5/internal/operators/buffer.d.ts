@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Buffers the source Observable values until `closingNotifier` emits.
  *
@@ -39,4 +39,6 @@ import { OperatorFunction } from '../types.d.ts';
  * values.
  * @name buffer
  */
-export declare function buffer<T>(closingNotifier: Observable<any>): OperatorFunction<T, T[]>;
+export declare function buffer<T>(
+  closingNotifier: Observable<any>,
+): OperatorFunction<T, T[]>;

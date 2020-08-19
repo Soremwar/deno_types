@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { UnaryFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { UnaryFunction } from "../types.d.ts";
 /**
  * Splits the source Observable into two, one with values that satisfy a
  * predicate, and another with values that don't satisfy the predicate.
@@ -47,4 +47,7 @@ import { UnaryFunction } from '../types.d.ts';
  * @name partition
  * @deprecated use `partition` static creation function instead
  */
-export declare function partition<T>(predicate: (value: T, index: number) => boolean, thisArg?: any): UnaryFunction<Observable<T>, [Observable<T>, Observable<T>]>;
+export declare function partition<T>(
+  predicate: (value: T, index: number) => boolean,
+  thisArg?: any,
+): UnaryFunction<Observable<T>, [Observable<T>, Observable<T>]>;

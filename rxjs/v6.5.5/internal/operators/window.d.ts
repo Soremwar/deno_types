@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Branch out the source Observable values as a nested Observable whenever
  * `windowBoundaries` emits.
@@ -42,4 +42,6 @@ import { OperatorFunction } from '../types.d.ts';
  * Observables emitting values of the source Observable.
  * @name window
  */
-export declare function window<T>(windowBoundaries: Observable<any>): OperatorFunction<T, Observable<T>>;
+export declare function window<T>(
+  windowBoundaries: Observable<any>,
+): OperatorFunction<T, Observable<T>>;

@@ -1,4 +1,4 @@
-import { SchedulerLike, OperatorFunction } from '../types.d.ts';
+import { SchedulerLike, OperatorFunction } from "../types.d.ts";
 /**
  *
  * Emits an object containing the current value, and the time that has
@@ -44,12 +44,14 @@ import { SchedulerLike, OperatorFunction } from '../types.d.ts';
  * @return {Observable<{ interval: number, value: T }>} Observable that emit infomation about value and interval
  * @name timeInterval
  */
-export declare function timeInterval<T>(scheduler?: SchedulerLike): OperatorFunction<T, TimeInterval<T>>;
+export declare function timeInterval<T>(
+  scheduler?: SchedulerLike,
+): OperatorFunction<T, TimeInterval<T>>;
 /**
  * @deprecated exposed API, use as interface only.
  */
 export declare class TimeInterval<T> {
-    value: T;
-    interval: number;
-    constructor(value: T, interval: number);
+  value: T;
+  interval: number;
+  constructor(value: T, interval: number);
 }

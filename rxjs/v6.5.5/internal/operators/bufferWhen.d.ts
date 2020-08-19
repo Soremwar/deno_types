@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Buffers the source Observable values, using a factory function of closing
  * Observables to determine when to close, emit, and reset the buffer.
@@ -41,4 +41,6 @@ import { OperatorFunction } from '../types.d.ts';
  * @return {Observable<T[]>} An observable of arrays of buffered values.
  * @name bufferWhen
  */
-export declare function bufferWhen<T>(closingSelector: () => Observable<any>): OperatorFunction<T, T[]>;
+export declare function bufferWhen<T>(
+  closingSelector: () => Observable<any>,
+): OperatorFunction<T, T[]>;

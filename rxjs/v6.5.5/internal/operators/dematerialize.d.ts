@@ -1,5 +1,5 @@
-import { Notification } from '../Notification.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Notification } from "../Notification.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Converts an Observable of {@link Notification} objects into the emissions
  * that they represent.
@@ -45,4 +45,7 @@ import { OperatorFunction } from '../types.d.ts';
  * embedded in Notification objects emitted by the source Observable.
  * @name dematerialize
  */
-export declare function dematerialize<T>(): OperatorFunction<Notification<T>, T>;
+export declare function dematerialize<T>(): OperatorFunction<
+  Notification<T>,
+  T
+>;

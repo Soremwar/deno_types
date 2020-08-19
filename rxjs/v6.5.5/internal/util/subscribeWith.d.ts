@@ -1,6 +1,6 @@
-import { Observable } from '../Observable.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { Subscription } from '../Subscription.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { Subscription } from "../Subscription.d.ts";
 /**
  * Subscribes a subscriber to an observable and ensures the subscriber is
  * returned as the subscription.
@@ -34,4 +34,7 @@ import { Subscription } from '../Subscription.d.ts';
  * @param subscriber the subscriber to be subscribed
  * @returns the passed-in subscriber (as the subscription)
  */
-export declare function subscribeWith<T>(observable: Observable<T>, subscriber: Subscriber<T>): Subscription;
+export declare function subscribeWith<T>(
+  observable: Observable<T>,
+  subscriber: Subscriber<T>,
+): Subscription;

@@ -1,6 +1,6 @@
-import { Scheduler } from '../Scheduler.d.ts';
-import { Subscription } from '../Subscription.d.ts';
-import { SchedulerAction } from '../types.d.ts';
+import { Scheduler } from "../Scheduler.d.ts";
+import { Subscription } from "../Subscription.d.ts";
+import { SchedulerAction } from "../types.d.ts";
 /**
  * A unit of work to be executed in a `scheduler`. An action is typically
  * created from within a {@link SchedulerLike} and an RxJS user does not need to concern
@@ -16,8 +16,11 @@ import { SchedulerAction } from '../types.d.ts';
  * @class Action<T>
  */
 export declare class Action<T> extends Subscription {
-    constructor(scheduler: Scheduler, work: (this: SchedulerAction<T>, state?: T) => void);
-    /**
+  constructor(
+    scheduler: Scheduler,
+    work: (this: SchedulerAction<T>, state?: T) => void,
+  );
+  /**
      * Schedules this action on its parent {@link SchedulerLike} for execution. May be passed
      * some context object, `state`. May happen at some point in the future,
      * according to the `delay` parameter, if specified.
@@ -27,5 +30,5 @@ export declare class Action<T> extends Subscription {
      * time unit is implicit and defined by the Scheduler.
      * @return {void}
      */
-    schedule(state?: T, delay?: number): Subscription;
+  schedule(state?: T, delay?: number): Subscription;
 }

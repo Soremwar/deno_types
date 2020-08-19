@@ -1,4 +1,4 @@
-import { OperatorFunction } from '../types.d.ts';
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Ignores all items emitted by the source Observable and only passes calls of `complete` or `error`.
  *

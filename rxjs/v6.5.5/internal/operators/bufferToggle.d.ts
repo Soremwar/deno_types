@@ -1,4 +1,4 @@
-import { OperatorFunction, SubscribableOrPromise } from '../types.d.ts';
+import { OperatorFunction, SubscribableOrPromise } from "../types.d.ts";
 /**
  * Buffers the source Observable values starting from an emission from
  * `openings` and ending when the output of `closingSelector` emits.
@@ -44,4 +44,7 @@ import { OperatorFunction, SubscribableOrPromise } from '../types.d.ts';
  * @return {Observable<T[]>} An observable of arrays of buffered values.
  * @name bufferToggle
  */
-export declare function bufferToggle<T, O>(openings: SubscribableOrPromise<O>, closingSelector: (value: O) => SubscribableOrPromise<any>): OperatorFunction<T, T[]>;
+export declare function bufferToggle<T, O>(
+  openings: SubscribableOrPromise<O>,
+  closingSelector: (value: O) => SubscribableOrPromise<any>,
+): OperatorFunction<T, T[]>;

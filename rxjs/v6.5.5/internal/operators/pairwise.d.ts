@@ -1,4 +1,4 @@
-import { OperatorFunction } from '../types.d.ts';
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Groups pairs of consecutive emissions together and emits them as an array of
  * two values.

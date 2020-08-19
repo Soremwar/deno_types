@@ -1,4 +1,4 @@
-import { AnimationFrameScheduler } from './AnimationFrameScheduler.d.ts';
+import { AnimationFrameScheduler } from "./AnimationFrameScheduler.d.ts";
 /**
  *
  * Animation Frame Scheduler

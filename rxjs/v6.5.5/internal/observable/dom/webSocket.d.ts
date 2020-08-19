@@ -1,4 +1,7 @@
-import { WebSocketSubject, WebSocketSubjectConfig } from './WebSocketSubject.d.ts';
+import {
+  WebSocketSubject,
+  WebSocketSubjectConfig,
+} from "./WebSocketSubject.d.ts";
 /**
  * Wrapper around the w3c-compatible WebSocket object provided by the browser.
  *
@@ -150,4 +153,6 @@ import { WebSocketSubject, WebSocketSubjectConfig } from './WebSocketSubject.d.t
  * configuration and additional Observers.
  * @return {WebSocketSubject} Subject which allows to both send and receive messages via WebSocket connection.
  */
-export declare function webSocket<T>(urlConfigOrSource: string | WebSocketSubjectConfig<T>): WebSocketSubject<T>;
+export declare function webSocket<T>(
+  urlConfigOrSource: string | WebSocketSubjectConfig<T>,
+): WebSocketSubject<T>;

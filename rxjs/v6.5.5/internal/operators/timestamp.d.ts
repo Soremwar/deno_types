@@ -1,4 +1,4 @@
-import { OperatorFunction, TimestampProvider, Timestamp } from '../types.d.ts';
+import { OperatorFunction, TimestampProvider, Timestamp } from "../types.d.ts";
 /**
  * Attaches a timestamp to each item emitted by an observable indicating when it was emitted
  *
@@ -30,4 +30,6 @@ import { OperatorFunction, TimestampProvider, Timestamp } from '../types.d.ts';
  *
  * @param timestampProvider An object with a `now()` method used to get the current timestamp.
  */
-export declare function timestamp<T>(timestampProvider?: TimestampProvider): OperatorFunction<T, Timestamp<T>>;
+export declare function timestamp<T>(
+  timestampProvider?: TimestampProvider,
+): OperatorFunction<T, Timestamp<T>>;

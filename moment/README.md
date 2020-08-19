@@ -7,7 +7,7 @@ Moment is a lightweight JavaScript date library for parsing, validating, manipul
 ### Usage Examples
 
 ```typescript
-// @deno-types="https://deno.land/x/types/moment/v2.26.0/moment.d.ts"
+// @deno-types="https://denopkg.com/soremwar/deno_types/moment/v2.26.0/moment.d.ts"
 import moment from 'https://cdn.pika.dev/moment@2.26.0';
 
 moment([2019, 1, 1]).format('YYYY-MM-DD'); // 2019-02-01

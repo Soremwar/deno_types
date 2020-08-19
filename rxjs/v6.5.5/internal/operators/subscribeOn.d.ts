@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Asynchronously subscribes Observers to this Observable on the specified {@link SchedulerLike}.
  *
@@ -58,4 +58,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * @return {Observable<T>} The source Observable modified so that its subscriptions happen on the specified {@link SchedulerLike}.
  * @name subscribeOn
  */
-export declare function subscribeOn<T>(scheduler: SchedulerLike, delay?: number): MonoTypeOperatorFunction<T>;
+export declare function subscribeOn<T>(
+  scheduler: SchedulerLike,
+  delay?: number,
+): MonoTypeOperatorFunction<T>;

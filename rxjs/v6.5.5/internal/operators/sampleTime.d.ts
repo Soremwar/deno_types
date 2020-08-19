@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Emits the most recently emitted value from the source Observable within
  * periodic time intervals.
@@ -40,4 +40,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * values emitted by the source Observable at the specified time interval.
  * @name sampleTime
  */
-export declare function sampleTime<T>(period: number, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+export declare function sampleTime<T>(
+  period: number,
+  scheduler?: SchedulerLike,
+): MonoTypeOperatorFunction<T>;

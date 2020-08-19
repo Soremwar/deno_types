@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Branch out the source Observable values as a nested Observable using a
  * factory function of closing Observables to determine when to start a new
@@ -44,4 +44,6 @@ import { OperatorFunction } from '../types.d.ts';
  * are Observables.
  * @name windowWhen
  */
-export declare function windowWhen<T>(closingSelector: () => Observable<any>): OperatorFunction<T, Observable<T>>;
+export declare function windowWhen<T>(
+  closingSelector: () => Observable<any>,
+): OperatorFunction<T, Observable<T>>;

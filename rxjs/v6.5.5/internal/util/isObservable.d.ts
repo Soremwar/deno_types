@@ -1,4 +1,4 @@
-import { Observable } from '../Observable.d.ts';
+import { Observable } from "../Observable.d.ts";
 /**
  * Tests to see if the object is an RxJS {@link Observable}
  * @param obj the object to test

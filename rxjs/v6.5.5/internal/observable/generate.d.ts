@@ -1,34 +1,34 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
 export declare type ConditionFunc<S> = (state: S) => boolean;
 export declare type IterateFunc<S> = (state: S) => S;
 export declare type ResultFunc<S, T> = (state: S) => T;
 export interface GenerateBaseOptions<S> {
-    /**
+  /**
      * Initial state.
      */
-    initialState: S;
-    /**
+  initialState: S;
+  /**
      * Condition function that accepts state and returns boolean.
      * When it returns false, the generator stops.
      * If not specified, a generator never stops.
      */
-    condition?: ConditionFunc<S>;
-    /**
+  condition?: ConditionFunc<S>;
+  /**
      * Iterate function that accepts state and returns new state.
      */
-    iterate: IterateFunc<S>;
-    /**
+  iterate: IterateFunc<S>;
+  /**
      * SchedulerLike to use for generation process.
      * By default, a generator starts immediately.
      */
-    scheduler?: SchedulerLike;
+  scheduler?: SchedulerLike;
 }
 export interface GenerateOptions<T, S> extends GenerateBaseOptions<S> {
-    /**
+  /**
      * Result selection function that accepts state and returns a value to emit.
      */
-    resultSelector: ResultFunc<S, T>;
+  resultSelector: ResultFunc<S, T>;
 }
 /**
  * Generates an observable sequence by running a state-driven loop
@@ -79,7 +79,13 @@ export interface GenerateOptions<T, S> extends GenerateBaseOptions<S> {
  * @param {SchedulerLike} [scheduler] A {@link SchedulerLike} on which to run the generator loop. If not provided, defaults to emit immediately.
  * @returns {Observable<T>} The generated sequence.
  */
-export declare function generate<T, S>(initialState: S, condition: ConditionFunc<S>, iterate: IterateFunc<S>, resultSelector: ResultFunc<S, T>, scheduler?: SchedulerLike): Observable<T>;
+export declare function generate<T, S>(
+  initialState: S,
+  condition: ConditionFunc<S>,
+  iterate: IterateFunc<S>,
+  resultSelector: ResultFunc<S, T>,
+  scheduler?: SchedulerLike,
+): Observable<T>;
 /**
  * Generates an Observable by running a state-driven loop
  * that emits an element on each iteration.
@@ -222,7 +228,12 @@ export declare function generate<T, S>(initialState: S, condition: ConditionFunc
  * @param {Scheduler} [scheduler] A {@link Scheduler} on which to run the generator loop. If not provided, defaults to emitting immediately.
  * @return {Observable<T>} The generated sequence.
  */
-export declare function generate<S>(initialState: S, condition: ConditionFunc<S>, iterate: IterateFunc<S>, scheduler?: SchedulerLike): Observable<S>;
+export declare function generate<S>(
+  initialState: S,
+  condition: ConditionFunc<S>,
+  iterate: IterateFunc<S>,
+  scheduler?: SchedulerLike,
+): Observable<S>;
 /**
  * Generates an observable sequence by running a state-driven loop
  * producing the sequence's elements, using the specified scheduler
@@ -263,7 +274,9 @@ export declare function generate<S>(initialState: S, condition: ConditionFunc<S>
  * @param {GenerateBaseOptions<S>} options Object that must contain initialState, iterate and might contain condition and scheduler.
  * @returns {Observable<S>} The generated sequence.
  */
-export declare function generate<S>(options: GenerateBaseOptions<S>): Observable<S>;
+export declare function generate<S>(
+  options: GenerateBaseOptions<S>,
+): Observable<S>;
 /**
  * Generates an observable sequence by running a state-driven loop
  * producing the sequence's elements, using the specified scheduler
@@ -305,4 +318,6 @@ export declare function generate<S>(options: GenerateBaseOptions<S>): Observable
  * @param {GenerateOptions<T, S>} options Object that must contain initialState, iterate, resultSelector and might contain condition and scheduler.
  * @returns {Observable<T>} The generated sequence.
  */
-export declare function generate<T, S>(options: GenerateOptions<T, S>): Observable<T>;
+export declare function generate<T, S>(
+  options: GenerateOptions<T, S>,
+): Observable<T>;

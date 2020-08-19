@@ -1,7 +1,7 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 export interface RetryConfig {
-    count: number;
-    resetOnSuccess?: boolean;
+  count: number;
+  resetOnSuccess?: boolean;
 }
 /**
  * Returns an Observable that mirrors the source Observable with the exception of an `error`. If the source Observable
@@ -50,4 +50,6 @@ export interface RetryConfig {
  * @name retry
  */
 export declare function retry<T>(count?: number): MonoTypeOperatorFunction<T>;
-export declare function retry<T>(config: RetryConfig): MonoTypeOperatorFunction<T>;
+export declare function retry<T>(
+  config: RetryConfig,
+): MonoTypeOperatorFunction<T>;

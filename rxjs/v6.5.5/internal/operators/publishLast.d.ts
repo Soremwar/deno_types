@@ -1,6 +1,6 @@
-import { Observable } from '../Observable.d.ts';
-import { ConnectableObservable } from '../observable/ConnectableObservable.d.ts';
-import { UnaryFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { ConnectableObservable } from "../observable/ConnectableObservable.d.ts";
+import { UnaryFunction } from "../types.d.ts";
 /**
  * Returns a connectable observable sequence that shares a single subscription to the
  * underlying sequence containing only the last notification.
@@ -57,4 +57,7 @@ import { UnaryFunction } from '../types.d.ts';
  * sequence produced by multicasting the source sequence.
  * @name publishLast
  */
-export declare function publishLast<T>(): UnaryFunction<Observable<T>, ConnectableObservable<T>>;
+export declare function publishLast<T>(): UnaryFunction<
+  Observable<T>,
+  ConnectableObservable<T>
+>;

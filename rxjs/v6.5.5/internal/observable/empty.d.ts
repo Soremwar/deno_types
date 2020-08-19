@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
 /**
  * The same Observable instance returned by any call to {@link empty} without a
  * `scheduler`. It is preferable to use this over `empty()`.

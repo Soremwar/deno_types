@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SubscribableOrPromise } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SubscribableOrPromise } from "../types.d.ts";
 /**
  * Ignores source values for a duration determined by another Observable, then
  * emits the most recent value from the source Observable, then repeats this
@@ -44,4 +44,6 @@ import { MonoTypeOperatorFunction, SubscribableOrPromise } from '../types.d.ts';
  * emissions from the source Observable.
  * @name audit
  */
-export declare function audit<T>(durationSelector: (value: T) => SubscribableOrPromise<any>): MonoTypeOperatorFunction<T>;
+export declare function audit<T>(
+  durationSelector: (value: T) => SubscribableOrPromise<any>,
+): MonoTypeOperatorFunction<T>;

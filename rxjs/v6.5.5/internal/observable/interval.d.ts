@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
 /**
  * Creates an Observable that emits sequential numbers every specified
  * interval of time, on a specified {@link SchedulerLike}.
@@ -48,5 +48,8 @@ import { SchedulerLike } from '../types.d.ts';
  * @name interval
  * @owner Observable
  */
-export declare function interval(period?: number, scheduler?: SchedulerLike): Observable<number>;
+export declare function interval(
+  period?: number,
+  scheduler?: SchedulerLike,
+): Observable<number>;
 //# sourceMappingURL=interval.d.ts.map

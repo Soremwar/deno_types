@@ -1,14 +1,14 @@
-import { Operator } from './Operator.d.ts';
-import { Observable } from './Observable.d.ts';
-import { Subscriber } from './Subscriber.d.ts';
-import { Subscription } from './Subscription.d.ts';
-import { Observer, SubscriptionLike, TeardownLogic } from './types.d.ts';
+import { Operator } from "./Operator.d.ts";
+import { Observable } from "./Observable.d.ts";
+import { Subscriber } from "./Subscriber.d.ts";
+import { Subscription } from "./Subscription.d.ts";
+import { Observer, SubscriptionLike, TeardownLogic } from "./types.d.ts";
 /**
  * @class SubjectSubscriber<T>
  */
 export declare class SubjectSubscriber<T> extends Subscriber<T> {
-    protected destination: Subject<T>;
-    constructor(destination: Subject<T>);
+  protected destination: Subject<T>;
+  constructor(destination: Subject<T>);
 }
 /**
  * A Subject is a special type of Observable that allows values to be
@@ -19,43 +19,44 @@ export declare class SubjectSubscriber<T> extends Subscriber<T> {
  *
  * @class Subject<T>
  */
-export declare class Subject<T> extends Observable<T> implements SubscriptionLike {
-    observers: Observer<T>[];
-    closed: boolean;
-    isStopped: boolean;
-    hasError: boolean;
-    thrownError: any;
-    /**
+export declare class Subject<T> extends Observable<T>
+  implements SubscriptionLike {
+  observers: Observer<T>[];
+  closed: boolean;
+  isStopped: boolean;
+  hasError: boolean;
+  thrownError: any;
+  /**
      * @nocollapse
      * @deprecated use new Subject() instead
      */
-    static create: Function;
-    lift<R>(operator: Operator<T, R>): Observable<R>;
-    next(value: T): void;
-    error(err: any): void;
-    complete(): void;
-    unsubscribe(): void;
-    /** @deprecated This is an internal implementation detail, do not use. */
-    _trySubscribe(subscriber: Subscriber<T>): TeardownLogic;
-    /** @deprecated This is an internal implementation detail, do not use. */
-    _subscribe(subscriber: Subscriber<T>): Subscription;
-    /**
+  static create: Function;
+  lift<R>(operator: Operator<T, R>): Observable<R>;
+  next(value: T): void;
+  error(err: any): void;
+  complete(): void;
+  unsubscribe(): void;
+  /** @deprecated This is an internal implementation detail, do not use. */
+  _trySubscribe(subscriber: Subscriber<T>): TeardownLogic;
+  /** @deprecated This is an internal implementation detail, do not use. */
+  _subscribe(subscriber: Subscriber<T>): Subscription;
+  /**
      * Creates a new Observable with this Subject as the source. You can do this
      * to create customize Observer-side logic of the Subject and conceal it from
      * code that uses the Observable.
      * @return {Observable} Observable that the Subject casts to
      */
-    asObservable(): Observable<T>;
+  asObservable(): Observable<T>;
 }
 /**
  * @class AnonymousSubject<T>
  */
 export declare class AnonymousSubject<T> extends Subject<T> {
-    protected destination?: Observer<T> | undefined;
-    constructor(destination?: Observer<T> | undefined, source?: Observable<T>);
-    next(value: T): void;
-    error(err: any): void;
-    complete(): void;
-    /** @deprecated This is an internal implementation detail, do not use. */
-    _subscribe(subscriber: Subscriber<T>): Subscription;
+  protected destination?: Observer<T> | undefined;
+  constructor(destination?: Observer<T> | undefined, source?: Observable<T>);
+  next(value: T): void;
+  error(err: any): void;
+  complete(): void;
+  /** @deprecated This is an internal implementation detail, do not use. */
+  _subscribe(subscriber: Subscriber<T>): Subscription;
 }

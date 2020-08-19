@@ -1,3 +1,6 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
-export declare function schedulePromise<T>(input: PromiseLike<T>, scheduler: SchedulerLike): Observable<T>;
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
+export declare function schedulePromise<T>(
+  input: PromiseLike<T>,
+  scheduler: SchedulerLike,
+): Observable<T>;

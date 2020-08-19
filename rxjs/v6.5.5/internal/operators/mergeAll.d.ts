@@ -1,4 +1,4 @@
-import { OperatorFunction, ObservableInput } from '../types.d.ts';
+import { OperatorFunction, ObservableInput } from "../types.d.ts";
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -56,4 +56,6 @@ import { OperatorFunction, ObservableInput } from '../types.d.ts';
  * inner Observables emitted by the source Observable.
  * @name mergeAll
  */
-export declare function mergeAll<T>(concurrent?: number): OperatorFunction<ObservableInput<T>, T>;
+export declare function mergeAll<T>(
+  concurrent?: number,
+): OperatorFunction<ObservableInput<T>, T>;

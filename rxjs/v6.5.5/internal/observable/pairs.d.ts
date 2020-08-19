@@ -1,7 +1,7 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerAction, SchedulerLike } from '../types.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { Subscription } from '../Subscription.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerAction, SchedulerLike } from "../types.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { Subscription } from "../Subscription.d.ts";
 /**
  * Convert an object into an Observable of `[key, value]` pairs.
  *
@@ -49,12 +49,15 @@ import { Subscription } from '../Subscription.d.ts';
  * @returns {(Observable<Array<string|T>>)} An observable sequence of
  * [key, value] pairs from the object.
  */
-export declare function pairs<T>(obj: Object, scheduler?: SchedulerLike): Observable<[string, T]>;
+export declare function pairs<T>(
+  obj: Object,
+  scheduler?: SchedulerLike,
+): Observable<[string, T]>;
 /** @internal */
 export declare function dispatch<T>(this: SchedulerAction<any>, state: {
-    keys: string[];
-    index: number;
-    subscriber: Subscriber<[string, T]>;
-    subscription: Subscription;
-    obj: Object;
+  keys: string[];
+  index: number;
+  subscriber: Subscriber<[string, T]>;
+  subscription: Subscription;
+  obj: Object;
 }): void;

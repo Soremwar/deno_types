@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that mirrors the source Observable with the exception of an `error`. If the source Observable
  * calls `error`, this method will emit the Throwable that caused the error to the Observable returned from `notifier`.
@@ -52,4 +52,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable} The source Observable modified with retry logic.
  * @name retryWhen
  */
-export declare function retryWhen<T>(notifier: (errors: Observable<any>) => Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function retryWhen<T>(
+  notifier: (errors: Observable<any>) => Observable<any>,
+): MonoTypeOperatorFunction<T>;

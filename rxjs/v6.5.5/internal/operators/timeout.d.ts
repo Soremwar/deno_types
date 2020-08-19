@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  *
  * Errors if Observable does not emit a value in given time span.
@@ -76,4 +76,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * @return {Observable<T>} Observable that mirrors behaviour of source, unless timeout checks fail.
  * @name timeout
  */
-export declare function timeout<T>(due: number | Date, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+export declare function timeout<T>(
+  due: number | Date,
+  scheduler?: SchedulerLike,
+): MonoTypeOperatorFunction<T>;

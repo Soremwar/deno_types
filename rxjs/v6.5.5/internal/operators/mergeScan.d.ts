@@ -1,9 +1,9 @@
-import { Operator } from '../Operator.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { Subscription } from '../Subscription.d.ts';
-import { OuterSubscriber } from '../OuterSubscriber.d.ts';
-import { InnerSubscriber } from '../InnerSubscriber.d.ts';
-import { ObservableInput, OperatorFunction } from '../types.d.ts';
+import { Operator } from "../Operator.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { Subscription } from "../Subscription.d.ts";
+import { OuterSubscriber } from "../OuterSubscriber.d.ts";
+import { InnerSubscriber } from "../InnerSubscriber.d.ts";
+import { ObservableInput, OperatorFunction } from "../types.d.ts";
 /**
  * Applies an accumulator function over the source Observable where the
  * accumulator function itself returns an Observable, then each intermediate
@@ -42,13 +42,21 @@ import { ObservableInput, OperatorFunction } from '../types.d.ts';
  * @return {Observable<R>} An observable of the accumulated values.
  * @name mergeScan
  */
-export declare function mergeScan<T, R>(accumulator: (acc: R, value: T, index: number) => ObservableInput<R>, seed: R, concurrent?: number): OperatorFunction<T, R>;
+export declare function mergeScan<T, R>(
+  accumulator: (acc: R, value: T, index: number) => ObservableInput<R>,
+  seed: R,
+  concurrent?: number,
+): OperatorFunction<T, R>;
 export declare class MergeScanOperator<T, R> implements Operator<T, R> {
-    private accumulator;
-    private seed;
-    private concurrent;
-    constructor(accumulator: (acc: R, value: T, index: number) => ObservableInput<R>, seed: R, concurrent: number);
-    call(subscriber: Subscriber<R>, source: any): any;
+  private accumulator;
+  private seed;
+  private concurrent;
+  constructor(
+    accumulator: (acc: R, value: T, index: number) => ObservableInput<R>,
+    seed: R,
+    concurrent: number,
+  );
+  call(subscriber: Subscriber<R>, source: any): any;
 }
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -56,18 +64,29 @@ export declare class MergeScanOperator<T, R> implements Operator<T, R> {
  * @extends {Ignored}
  */
 export declare class MergeScanSubscriber<T, R> extends OuterSubscriber<T, R> {
-    private accumulator;
-    private acc;
-    private concurrent;
-    private hasValue;
-    private hasCompleted;
-    private buffer;
-    private active;
-    protected index: number;
-    constructor(destination: Subscriber<R>, accumulator: (acc: R, value: T, index: number) => ObservableInput<R>, acc: R, concurrent: number);
-    protected _next(value: any): void;
-    private _innerSub;
-    protected _complete(): void;
-    notifyNext(outerValue: T, innerValue: R, outerIndex: number, innerIndex: number, innerSub: InnerSubscriber<T, R>): void;
-    notifyComplete(innerSub: Subscription): void;
+  private accumulator;
+  private acc;
+  private concurrent;
+  private hasValue;
+  private hasCompleted;
+  private buffer;
+  private active;
+  protected index: number;
+  constructor(
+    destination: Subscriber<R>,
+    accumulator: (acc: R, value: T, index: number) => ObservableInput<R>,
+    acc: R,
+    concurrent: number,
+  );
+  protected _next(value: any): void;
+  private _innerSub;
+  protected _complete(): void;
+  notifyNext(
+    outerValue: T,
+    innerValue: R,
+    outerIndex: number,
+    innerIndex: number,
+    innerSub: InnerSubscriber<T, R>,
+  ): void;
+  notifyComplete(innerSub: Subscription): void;
 }

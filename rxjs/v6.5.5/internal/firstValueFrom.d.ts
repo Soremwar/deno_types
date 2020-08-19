@@ -1,4 +1,4 @@
-import { Observable } from './Observable.d.ts';
+import { Observable } from "./Observable.d.ts";
 /**
  * Converts an observable to a promise by subscribing to the observable,
  * and returning a promise that will resolve as soon as the first value

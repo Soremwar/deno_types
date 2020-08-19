@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Emits the values emitted by the source Observable until a `notifier`
  * Observable emits a value.
@@ -39,4 +39,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * Observable until such time as `notifier` emits its first value.
  * @name takeUntil
  */
-export declare function takeUntil<T>(notifier: Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function takeUntil<T>(
+  notifier: Observable<any>,
+): MonoTypeOperatorFunction<T>;

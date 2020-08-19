@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { SchedulerLike } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SchedulerLike } from "../types.d.ts";
 /**
  * Creates an Observable that starts emitting after an `dueTime` and
  * emits ever increasing numbers after each `period` of time thereafter.
@@ -50,4 +50,8 @@ import { SchedulerLike } from '../types.d.ts';
  * @name timer
  * @owner Observable
  */
-export declare function timer(dueTime?: number | Date, periodOrScheduler?: number | SchedulerLike, scheduler?: SchedulerLike): Observable<number>;
+export declare function timer(
+  dueTime?: number | Date,
+  periodOrScheduler?: number | SchedulerLike,
+  scheduler?: SchedulerLike,
+): Observable<number>;

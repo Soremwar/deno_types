@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Emits the single value at the specified `index` in a sequence of emissions
  * from the source Observable.
@@ -46,4 +46,7 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * Otherwise, will emit the default value if given. If not, then emits an error.
  * @name elementAt
  */
-export declare function elementAt<T>(index: number, defaultValue?: T): MonoTypeOperatorFunction<T>;
+export declare function elementAt<T>(
+  index: number,
+  defaultValue?: T,
+): MonoTypeOperatorFunction<T>;

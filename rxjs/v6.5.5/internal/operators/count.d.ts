@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Counts the number of emissions on the source and emits that number when the
  * source completes.
@@ -58,4 +58,6 @@ import { OperatorFunction } from '../types.d.ts';
  * described above.
  * @name count
  */
-export declare function count<T>(predicate?: (value: T, index: number, source: Observable<T>) => boolean): OperatorFunction<T, number>;
+export declare function count<T>(
+  predicate?: (value: T, index: number, source: Observable<T>) => boolean,
+): OperatorFunction<T, number>;

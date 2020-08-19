@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Branch out the source Observable values as a nested Observable with each
  * nested Observable emitting at most `windowSize` values.
@@ -62,4 +62,7 @@ import { OperatorFunction } from '../types.d.ts';
  * are Observable of values.
  * @name windowCount
  */
-export declare function windowCount<T>(windowSize: number, startWindowEvery?: number): OperatorFunction<T, Observable<T>>;
+export declare function windowCount<T>(
+  windowSize: number,
+  startWindowEvery?: number,
+): OperatorFunction<T, Observable<T>>;

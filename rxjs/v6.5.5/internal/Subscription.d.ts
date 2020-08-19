@@ -1,4 +1,4 @@
-import { SubscriptionLike, TeardownLogic } from './types.d.ts';
+import { SubscriptionLike, TeardownLogic } from "./types.d.ts";
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -12,30 +12,30 @@ import { SubscriptionLike, TeardownLogic } from './types.d.ts';
  * @class Subscription
  */
 export declare class Subscription implements SubscriptionLike {
-    /** @nocollapse */
-    static EMPTY: Subscription;
-    /**
+  /** @nocollapse */
+  static EMPTY: Subscription;
+  /**
      * A flag to indicate whether this Subscription has already been unsubscribed.
      * @type {boolean}
      */
-    closed: boolean;
-    /** @internal */
-    protected _parentOrParents: Subscription | Subscription[] | null;
-    /** @internal */
-    private _subscriptions;
-    /**
+  closed: boolean;
+  /** @internal */
+  protected _parentOrParents: Subscription | Subscription[] | null;
+  /** @internal */
+  private _subscriptions;
+  /**
      * @param {function(): void} [unsubscribe] A function describing how to
      * perform the disposal of resources when the `unsubscribe` method is called.
      */
-    constructor(unsubscribe?: () => void);
-    /**
+  constructor(unsubscribe?: () => void);
+  /**
      * Disposes the resources held by the subscription. May, for instance, cancel
      * an ongoing Observable execution or cancel any other type of work that
      * started when the Subscription was created.
      * @return {void}
      */
-    unsubscribe(): void;
-    /**
+  unsubscribe(): void;
+  /**
      * Adds a tear down to be called during the unsubscribe() of this
      * Subscription. Can also be used to add a child subscription.
      *
@@ -55,12 +55,12 @@ export declare class Subscription implements SubscriptionLike {
      * `remove()` to remove the passed teardown logic from the inner subscriptions
      * list.
      */
-    add(teardown: TeardownLogic): Subscription;
-    /**
+  add(teardown: TeardownLogic): Subscription;
+  /**
      * Removes a Subscription from the internal list of subscriptions that will
      * unsubscribe during the unsubscribe process of this Subscription.
      * @param {Subscription} subscription The subscription to remove.
      * @return {void}
      */
-    remove(subscription: Subscription): void;
+  remove(subscription: Subscription): void;
 }

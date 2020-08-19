@@ -1,7 +1,7 @@
 export interface TimeoutError extends Error {
 }
 export interface TimeoutErrorCtor {
-    new (): TimeoutError;
+  new (): TimeoutError;
 }
 /**
  * An error thrown when duetime elapses.

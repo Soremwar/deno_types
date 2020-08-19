@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that mirrors the source Observable, but will call a specified function when
  * the source terminates on complete or error.
@@ -54,4 +54,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable} An Observable that mirrors the source, but will call the specified function on termination.
  * @name finally
  */
-export declare function finalize<T>(callback: () => void): MonoTypeOperatorFunction<T>;
+export declare function finalize<T>(
+  callback: () => void,
+): MonoTypeOperatorFunction<T>;

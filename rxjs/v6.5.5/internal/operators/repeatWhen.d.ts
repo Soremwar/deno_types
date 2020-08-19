@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that mirrors the source Observable with the exception of a `complete`. If the source
  * Observable calls `complete`, this method will emit to the Observable returned from `notifier`. If that Observable
@@ -29,4 +29,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable} The source Observable modified with repeat logic.
  * @name repeatWhen
  */
-export declare function repeatWhen<T>(notifier: (notifications: Observable<any>) => Observable<any>): MonoTypeOperatorFunction<T>;
+export declare function repeatWhen<T>(
+  notifier: (notifications: Observable<any>) => Observable<any>,
+): MonoTypeOperatorFunction<T>;

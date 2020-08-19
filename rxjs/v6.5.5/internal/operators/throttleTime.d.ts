@@ -1,5 +1,5 @@
-import { ThrottleConfig } from './throttle.d.ts';
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { ThrottleConfig } from "./throttle.d.ts";
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Emits a value from the source Observable, then ignores subsequent source
  * values for `duration` milliseconds, then repeats this process.
@@ -78,4 +78,8 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * limit the rate of emissions from the source.
  * @name throttleTime
  */
-export declare function throttleTime<T>(duration: number, scheduler?: SchedulerLike, config?: ThrottleConfig): MonoTypeOperatorFunction<T>;
+export declare function throttleTime<T>(
+  duration: number,
+  scheduler?: SchedulerLike,
+  config?: ThrottleConfig,
+): MonoTypeOperatorFunction<T>;

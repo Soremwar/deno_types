@@ -1,4 +1,4 @@
-import { AsapScheduler } from './AsapScheduler.d.ts';
+import { AsapScheduler } from "./AsapScheduler.d.ts";
 /**
  *
  * Asap Scheduler

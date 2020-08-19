@@ -1,4 +1,4 @@
-import { QueueScheduler } from './QueueScheduler.d.ts';
+import { QueueScheduler } from "./QueueScheduler.d.ts";
 /**
  *
  * Queue Scheduler

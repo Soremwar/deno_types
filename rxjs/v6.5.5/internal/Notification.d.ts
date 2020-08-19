@@ -1,12 +1,12 @@
-import { PartialObserver } from './types.d.ts';
-import { Observable } from './Observable.d.ts';
+import { PartialObserver } from "./types.d.ts";
+import { Observable } from "./Observable.d.ts";
 /**
  * @deprecated NotificationKind is deprecated as const enums are not compatible with isolated modules. Use a string literal instead.
  */
 export declare enum NotificationKind {
-    NEXT = "N",
-    ERROR = "E",
-    COMPLETE = "C"
+  NEXT = "N",
+  ERROR = "E",
+  COMPLETE = "C",
 }
 /**
  * Represents a push-based event or value that an {@link Observable} can emit.
@@ -23,20 +23,20 @@ export declare enum NotificationKind {
  * @class Notification<T>
  */
 export declare class Notification<T> {
-    kind: 'N' | 'E' | 'C';
-    value?: T | undefined;
-    error?: any;
-    hasValue: boolean;
-    constructor(kind: 'N', value?: T);
-    constructor(kind: 'E', value: undefined, error: any);
-    constructor(kind: 'C');
-    /**
+  kind: "N" | "E" | "C";
+  value?: T | undefined;
+  error?: any;
+  hasValue: boolean;
+  constructor(kind: "N", value?: T);
+  constructor(kind: "E", value: undefined, error: any);
+  constructor(kind: "C");
+  /**
      * Delivers to the given `observer` the value wrapped by this Notification.
      * @param {Observer} observer
      * @return
      */
-    observe(observer: PartialObserver<T>): any;
-    /**
+  observe(observer: PartialObserver<T>): any;
+  /**
      * Given some {@link Observer} callbacks, deliver the value represented by the
      * current Notification to the correctly corresponding callback.
      * @param {function(value: T): void} next An Observer `next` callback.
@@ -44,8 +44,12 @@ export declare class Notification<T> {
      * @param {function(): void} [complete] An Observer `complete` callback.
      * @return {any}
      */
-    do(next: (value: T) => void, error?: (err: any) => void, complete?: () => void): any;
-    /**
+  do(
+    next: (value: T) => void,
+    error?: (err: any) => void,
+    complete?: () => void,
+  ): any;
+  /**
      * Takes an Observer or its individual callback functions, and calls `observe`
      * or `do` methods accordingly.
      * @param {Observer|function(value: T): void} nextOrObserver An Observer or
@@ -54,16 +58,20 @@ export declare class Notification<T> {
      * @param {function(): void} [complete] An Observer `complete` callback.
      * @return {any}
      */
-    accept(nextOrObserver: PartialObserver<T> | ((value: T) => void), error?: (err: any) => void, complete?: () => void): any;
-    /**
+  accept(
+    nextOrObserver: PartialObserver<T> | ((value: T) => void),
+    error?: (err: any) => void,
+    complete?: () => void,
+  ): any;
+  /**
      * Returns a simple Observable that just delivers the notification represented
      * by this Notification instance.
      * @return {any}
      */
-    toObservable(): Observable<T>;
-    private static completeNotification;
-    private static undefinedValueNotification;
-    /**
+  toObservable(): Observable<T>;
+  private static completeNotification;
+  private static undefinedValueNotification;
+  /**
      * A shortcut to create a Notification instance of the type `next` from a
      * given value.
      * @param {T} value The `next` value.
@@ -71,8 +79,8 @@ export declare class Notification<T> {
      * argument.
      * @nocollapse
      */
-    static createNext<T>(value: T): Notification<T>;
-    /**
+  static createNext<T>(value: T): Notification<T>;
+  /**
      * A shortcut to create a Notification instance of the type `error` from a
      * given error.
      * @param {any} [err] The `error` error.
@@ -80,11 +88,11 @@ export declare class Notification<T> {
      * argument.
      * @nocollapse
      */
-    static createError<T>(err?: any): Notification<T>;
-    /**
+  static createError<T>(err?: any): Notification<T>;
+  /**
      * A shortcut to create a Notification instance of the type `complete`.
      * @return {Notification<any>} The valueless "complete" Notification.
      * @nocollapse
      */
-    static createComplete(): Notification<any>;
+  static createComplete(): Notification<any>;
 }

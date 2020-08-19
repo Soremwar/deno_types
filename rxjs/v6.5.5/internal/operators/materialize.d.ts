@@ -1,5 +1,5 @@
-import { Notification } from '../Notification.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Notification } from "../Notification.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Represents all of the notifications from the source Observable as `next`
  * emissions marked with their original types within {@link Notification}

@@ -1,5 +1,5 @@
-import { ObservableInput } from '../types.d.ts';
-import { Observable } from '../Observable.d.ts';
+import { ObservableInput } from "../types.d.ts";
+import { Observable } from "../Observable.d.ts";
 /**
  * Splits the source Observable into two, one with values that satisfy a
  * predicate, and another with values that don't satisfy the predicate.
@@ -51,4 +51,8 @@ import { Observable } from '../Observable.d.ts';
  * with values that passed the predicate, and another with values that did not
  * pass the predicate.
  */
-export declare function partition<T>(source: ObservableInput<T>, predicate: (value: T, index: number) => boolean, thisArg?: any): [Observable<T>, Observable<T>];
+export declare function partition<T>(
+  source: ObservableInput<T>,
+  predicate: (value: T, index: number) => boolean,
+  thisArg?: any,
+): [Observable<T>, Observable<T>];

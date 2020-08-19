@@ -7,10 +7,10 @@ RxJS is a library for reactive programming using Observables, to make it easier 
 ### Usage Examples
 
 ```typescript
-// @deno-types="https://deno.land/x/types/rxjs/v6.5.5/rxjs.d.ts"
+// @deno-types="https://denopkg.com/soremwar/deno_types/rxjs/v6.5.5/rxjs.d.ts"
 import rxjs, { range } from "https://cdn.pika.dev/rxjs@6.5.5";
 
-// @deno-types="https://deno.land/x/types/rxjs/v6.5.5/operators.d.ts"
+// @deno-types="https://denopkg.com/soremwar/deno_types/rxjs/v6.5.5/operators.d.ts"
 import operators from 'https://dev.jspm.io/rxjs@6.5.5/operators';
 
 ```

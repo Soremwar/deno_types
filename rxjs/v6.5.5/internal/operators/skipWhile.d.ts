@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
  * true, but emits all further source items as soon as the condition becomes false.
@@ -10,4 +10,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * specified predicate becomes false.
  * @name skipWhile
  */
-export declare function skipWhile<T>(predicate: (value: T, index: number) => boolean): MonoTypeOperatorFunction<T>;
+export declare function skipWhile<T>(
+  predicate: (value: T, index: number) => boolean,
+): MonoTypeOperatorFunction<T>;

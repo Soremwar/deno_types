@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Branch out the source Observable values as a nested Observable starting from
  * an emission from `openings` and ending when the output of `closingSelector`
@@ -47,4 +47,7 @@ import { OperatorFunction } from '../types.d.ts';
  * are Observables.
  * @name windowToggle
  */
-export declare function windowToggle<T, O>(openings: Observable<O>, closingSelector: (openValue: O) => Observable<any>): OperatorFunction<T, Observable<T>>;
+export declare function windowToggle<T, O>(
+  openings: Observable<O>,
+  closingSelector: (openValue: O) => Observable<any>,
+): OperatorFunction<T, Observable<T>>;

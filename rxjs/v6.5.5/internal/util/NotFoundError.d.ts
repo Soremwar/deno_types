@@ -1,7 +1,7 @@
 export interface NotFoundError extends Error {
 }
 export interface NotFoundErrorCtor {
-    new (message: string): NotFoundError;
+  new (message: string): NotFoundError;
 }
 /**
  * An error thrown when a value or values are missing from an

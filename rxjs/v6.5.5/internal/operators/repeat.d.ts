@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that will resubscribe to the source stream when the source stream completes, at most count times.
  *

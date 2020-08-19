@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { SubscribableOrPromise } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { SubscribableOrPromise } from "../types.d.ts";
 /**
  * Decides at subscription time which Observable will actually be subscribed.
  *
@@ -88,4 +88,8 @@ import { SubscribableOrPromise } from '../types.d.ts';
  * @name iif
  * @owner Observable
 */
-export declare function iif<T = never, F = never>(condition: () => boolean, trueResult?: SubscribableOrPromise<T>, falseResult?: SubscribableOrPromise<F>): Observable<T | F>;
+export declare function iif<T = never, F = never>(
+  condition: () => boolean,
+  trueResult?: SubscribableOrPromise<T>,
+  falseResult?: SubscribableOrPromise<F>,
+): Observable<T | F>;

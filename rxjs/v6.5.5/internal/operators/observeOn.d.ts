@@ -1,7 +1,13 @@
-import { Operator } from '../Operator.d.ts';
-import { Subscriber } from '../Subscriber.d.ts';
-import { Notification } from '../Notification.d.ts';
-import { MonoTypeOperatorFunction, PartialObserver, SchedulerAction, SchedulerLike, TeardownLogic } from '../types.d.ts';
+import { Operator } from "../Operator.d.ts";
+import { Subscriber } from "../Subscriber.d.ts";
+import { Notification } from "../Notification.d.ts";
+import {
+  MonoTypeOperatorFunction,
+  PartialObserver,
+  SchedulerAction,
+  SchedulerLike,
+  TeardownLogic,
+} from "../types.d.ts";
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -54,12 +60,15 @@ import { MonoTypeOperatorFunction, PartialObserver, SchedulerAction, SchedulerLi
  *
  * @name observeOn
  */
-export declare function observeOn<T>(scheduler: SchedulerLike, delay?: number): MonoTypeOperatorFunction<T>;
+export declare function observeOn<T>(
+  scheduler: SchedulerLike,
+  delay?: number,
+): MonoTypeOperatorFunction<T>;
 export declare class ObserveOnOperator<T> implements Operator<T, T> {
-    private scheduler;
-    private delay;
-    constructor(scheduler: SchedulerLike, delay?: number);
-    call(subscriber: Subscriber<T>, source: any): TeardownLogic;
+  private scheduler;
+  private delay;
+  constructor(scheduler: SchedulerLike, delay?: number);
+  call(subscriber: Subscriber<T>, source: any): TeardownLogic;
 }
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -67,18 +76,28 @@ export declare class ObserveOnOperator<T> implements Operator<T, T> {
  * @extends {Ignored}
  */
 export declare class ObserveOnSubscriber<T> extends Subscriber<T> {
-    private scheduler;
-    private delay;
-    /** @nocollapse */
-    static dispatch(this: SchedulerAction<ObserveOnMessage>, arg: ObserveOnMessage): void;
-    constructor(destination: Subscriber<T>, scheduler: SchedulerLike, delay?: number);
-    private scheduleMessage;
-    protected _next(value: T): void;
-    protected _error(err: any): void;
-    protected _complete(): void;
+  private scheduler;
+  private delay;
+  /** @nocollapse */
+  static dispatch(
+    this: SchedulerAction<ObserveOnMessage>,
+    arg: ObserveOnMessage,
+  ): void;
+  constructor(
+    destination: Subscriber<T>,
+    scheduler: SchedulerLike,
+    delay?: number,
+  );
+  private scheduleMessage;
+  protected _next(value: T): void;
+  protected _error(err: any): void;
+  protected _complete(): void;
 }
 export declare class ObserveOnMessage {
-    notification: Notification<any>;
-    destination: PartialObserver<any>;
-    constructor(notification: Notification<any>, destination: PartialObserver<any>);
+  notification: Notification<any>;
+  destination: PartialObserver<any>;
+  constructor(
+    notification: Notification<any>,
+    destination: PartialObserver<any>,
+  );
 }

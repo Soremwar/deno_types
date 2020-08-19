@@ -1,4 +1,4 @@
-import { OperatorFunction } from '../types.d.ts';
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Collects all source emissions and emits them as an array when the source completes.
  *

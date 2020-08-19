@@ -1,5 +1,5 @@
-import { ObservableInput, SchedulerLike } from '../types.d.ts';
-import { Observable } from '../Observable.d.ts';
+import { ObservableInput, SchedulerLike } from "../types.d.ts";
+import { Observable } from "../Observable.d.ts";
 /**
  * Converts from a common {@link ObservableInput} type to an observable where subscription and emissions
  * are scheduled on the provided scheduler.
@@ -11,4 +11,7 @@ import { Observable } from '../Observable.d.ts';
  * @param scheduler The scheduler to use to schedule the subscription and emissions from
  * the returned observable.
  */
-export declare function scheduled<T>(input: ObservableInput<T>, scheduler: SchedulerLike): Observable<T>;
+export declare function scheduled<T>(
+  input: ObservableInput<T>,
+  scheduler: SchedulerLike,
+): Observable<T>;

@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Returns an observable that asserts that only one value is
  * emitted from the observable that matches the predicate. If no
@@ -80,4 +80,6 @@ import { MonoTypeOperatorFunction } from '../types.d.ts';
  * @return {Observable<T>} An Observable that emits the single item emitted by the source Observable that matches
  * the predicate or `undefined` when no items match.
  */
-export declare function single<T>(predicate?: (value: T, index: number, source: Observable<T>) => boolean): MonoTypeOperatorFunction<T>;
+export declare function single<T>(
+  predicate?: (value: T, index: number, source: Observable<T>) => boolean,
+): MonoTypeOperatorFunction<T>;

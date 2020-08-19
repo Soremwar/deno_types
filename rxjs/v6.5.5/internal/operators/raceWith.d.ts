@@ -1,13 +1,26 @@
-import { Observable } from '../Observable.d.ts';
-import { MonoTypeOperatorFunction, OperatorFunction, ObservableInput, ObservedValueUnionFromArray } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import {
+  MonoTypeOperatorFunction,
+  OperatorFunction,
+  ObservableInput,
+  ObservedValueUnionFromArray,
+} from "../types.d.ts";
 /** @deprecated Deprecated use {@link raceWith} */
-export declare function race<T>(observables: Array<Observable<T>>): MonoTypeOperatorFunction<T>;
+export declare function race<T>(
+  observables: Array<Observable<T>>,
+): MonoTypeOperatorFunction<T>;
 /** @deprecated Deprecated use {@link raceWith} */
-export declare function race<T, R>(observables: Array<Observable<T>>): OperatorFunction<T, R>;
+export declare function race<T, R>(
+  observables: Array<Observable<T>>,
+): OperatorFunction<T, R>;
 /** @deprecated Deprecated use {@link raceWith} */
-export declare function race<T>(...observables: Array<Observable<T> | Array<Observable<T>>>): MonoTypeOperatorFunction<T>;
+export declare function race<T>(
+  ...observables: Array<Observable<T> | Array<Observable<T>>>
+): MonoTypeOperatorFunction<T>;
 /** @deprecated Deprecated use {@link raceWith} */
-export declare function race<T, R>(...observables: Array<Observable<any> | Array<Observable<any>>>): OperatorFunction<T, R>;
+export declare function race<T, R>(
+  ...observables: Array<Observable<any> | Array<Observable<any>>>
+): OperatorFunction<T, R>;
 /**
  * Creates an Observable that mirrors the first source Observable to emit a next,
  * error or complete notification from the combination of the Observable to which
@@ -35,4 +48,6 @@ export declare function race<T, R>(...observables: Array<Observable<any> | Array
  *
  * @param otherSources Sources used to race for which Observable emits first.
  */
-export declare function raceWith<T, A extends ObservableInput<any>[]>(...otherSources: A): OperatorFunction<T, T | ObservedValueUnionFromArray<A>>;
+export declare function raceWith<T, A extends ObservableInput<any>[]>(
+  ...otherSources: A
+): OperatorFunction<T, T | ObservedValueUnionFromArray<A>>;

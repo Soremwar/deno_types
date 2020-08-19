@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
+import { MonoTypeOperatorFunction, SchedulerLike } from "../types.d.ts";
 /**
  * Emits a notification from the source Observable only after a particular time span
  * has passed without another source emission.
@@ -57,4 +57,7 @@ import { MonoTypeOperatorFunction, SchedulerLike } from '../types.d.ts';
  * too frequently.
  * @name debounceTime
  */
-export declare function debounceTime<T>(dueTime: number, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+export declare function debounceTime<T>(
+  dueTime: number,
+  scheduler?: SchedulerLike,
+): MonoTypeOperatorFunction<T>;

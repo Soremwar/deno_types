@@ -1,7 +1,7 @@
 export interface SequenceError extends Error {
 }
 export interface SequenceErrorCtor {
-    new (message: string): SequenceError;
+  new (message: string): SequenceError;
 }
 /**
  * An error thrown when something is wrong with the sequence of

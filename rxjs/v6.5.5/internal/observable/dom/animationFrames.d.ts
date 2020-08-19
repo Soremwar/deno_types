@@ -1,6 +1,6 @@
-import { Observable } from '../../Observable.d.ts';
+import { Observable } from "../../Observable.d.ts";
 export interface TimestampProvider {
-    now(): number;
+  now(): number;
 }
 /**
  * An observable of animation frames
@@ -74,4 +74,6 @@ export interface TimestampProvider {
  *
  * @param timestampProvider An object with a `now` method that provides a numeric timestamp
  */
-export declare function animationFrames(timestampProvider?: TimestampProvider): Observable<number>;
+export declare function animationFrames(
+  timestampProvider?: TimestampProvider,
+): Observable<number>;

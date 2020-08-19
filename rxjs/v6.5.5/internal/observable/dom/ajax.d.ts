@@ -1,4 +1,4 @@
-import { AjaxCreationMethod } from './AjaxObservable.d.ts';
+import { AjaxCreationMethod } from "./AjaxObservable.d.ts";
 /**
  * There is an ajax operator on the Rx object.
  *

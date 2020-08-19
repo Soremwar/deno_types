@@ -1,4 +1,4 @@
-import { OperatorFunction } from '../types.d.ts';
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Emits `false` if the input Observable emits any values, or emits `true` if the
  * input Observable completes without emitting any values.

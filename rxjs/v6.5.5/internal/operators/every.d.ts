@@ -1,5 +1,5 @@
-import { Observable } from '../Observable.d.ts';
-import { OperatorFunction } from '../types.d.ts';
+import { Observable } from "../Observable.d.ts";
+import { OperatorFunction } from "../types.d.ts";
 /**
  * Returns an Observable that emits whether or not every item of the source satisfies the condition specified.
  *
@@ -25,4 +25,7 @@ import { OperatorFunction } from '../types.d.ts';
  * @return {Observable} An Observable of booleans that determines if all items of the source Observable meet the condition specified.
  * @name every
  */
-export declare function every<T>(predicate: (value: T, index: number, source: Observable<T>) => boolean, thisArg?: any): OperatorFunction<T, boolean>;
+export declare function every<T>(
+  predicate: (value: T, index: number, source: Observable<T>) => boolean,
+  thisArg?: any,
+): OperatorFunction<T, boolean>;

@@ -1,8 +1,8 @@
 export interface UnsubscriptionError extends Error {
-    readonly errors: any[];
+  readonly errors: any[];
 }
 export interface UnsubscriptionErrorCtor {
-    new (errors: any[]): UnsubscriptionError;
+  new (errors: any[]): UnsubscriptionError;
 }
 /**
  * An error thrown when one or more errors have occurred during the

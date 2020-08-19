@@ -1,4 +1,4 @@
-import { MonoTypeOperatorFunction } from '../types.d.ts';
+import { MonoTypeOperatorFunction } from "../types.d.ts";
 /**
  * Make a {@link ConnectableObservable} behave like a ordinary observable and automates the way
  * you can connect to it.

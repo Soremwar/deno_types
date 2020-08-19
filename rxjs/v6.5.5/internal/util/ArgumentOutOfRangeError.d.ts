@@ -1,7 +1,7 @@
 export interface ArgumentOutOfRangeError extends Error {
 }
 export interface ArgumentOutOfRangeErrorCtor {
-    new (): ArgumentOutOfRangeError;
+  new (): ArgumentOutOfRangeError;
 }
 /**
  * An error thrown when an element was queried at a certain index of an
