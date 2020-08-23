@@ -12,6 +12,7 @@ located here have been validated to work with Deno.
 
 - PropTypes
 - React
+- React Linked State Mixin
 - ReactDOM
 - RxJS
 
