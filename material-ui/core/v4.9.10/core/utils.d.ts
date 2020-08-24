@@ -1,0 +1,15 @@
+export { default as capitalize } from './utils/capitalize.d.ts';
+export { default as createChainedFunction } from './utils/deprecatedPropType.d.ts';
+export { default as createSvgIcon } from './utils/createSvgIcon.d.ts';
+export { default as debounce } from './utils/debounce.d.ts';
+export { default as deprecatedPropType } from './utils/deprecatedPropType.d.ts';
+export { default as isMuiElement } from './utils/isMuiElement.d.ts';
+export { default as ownerDocument } from './utils/ownerDocument.d.ts';
+export { default as ownerWindow } from './utils/ownerWindow.d.ts';
+export { default as requirePropFactory } from './utils/requirePropFactory.d.ts';
+export { default as setRef } from './utils/setRef.d.ts';
+export { default as unsupportedProp } from './utils/unsupportedProp.d.ts';
+export { default as useControlled } from './utils/useControlled.d.ts';
+export { default as useEventCallback } from './utils/useEventCallback.d.ts';
+export { default as useForkRef } from './utils/useForkRef.d.ts';
+export { default as useIsFocusVisible } from './utils/useIsFocusVisible.d.ts';
