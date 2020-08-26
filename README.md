@@ -13,9 +13,11 @@ located here have been validated to work with Deno.
 - JSS
 - Material UI - Styles
 - Material UI - System
+- Popper.js
 - PropTypes
 - React
 - React Linked State Mixin
+- React Transition Group
 - ReactDOM
 - RxJS
 
