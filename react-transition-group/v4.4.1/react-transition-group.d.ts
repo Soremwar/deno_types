@@ -8,8 +8,8 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
 
-export { default as Transition } from './react-transition-group/Transition.d.ts';
-export { default as CSSTransition } from './react-transition-group/CSSTransition.d.ts';
-export { default as TransitionGroup } from './react-transition-group/TransitionGroup.d.ts';
-export { default as SwitchTransition } from './react-transition-group/SwitchTransition.d.ts';
-export { default as config } from './react-transition-group/config.d.ts';
+export { default as Transition } from "./react-transition-group/Transition.d.ts";
+export { default as CSSTransition } from "./react-transition-group/CSSTransition.d.ts";
+export { default as TransitionGroup } from "./react-transition-group/TransitionGroup.d.ts";
+export { default as SwitchTransition } from "./react-transition-group/SwitchTransition.d.ts";
+export { default as config } from "./react-transition-group/config.d.ts";

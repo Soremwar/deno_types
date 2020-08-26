@@ -1,11 +1,11 @@
-import * as React from '../../../../react/v16.13.1/react.d.ts';
-import { PropInjector } from '../../../types/v5.1.0/index.d.ts';
+import * as React from "../../../../react/v16.13.1/react.d.ts";
+import { PropInjector } from "../../../types/v5.1.0/index.d.ts";
 import {
   AtRule,
   Properties,
-} from '../../../../csstype/v3.0.2/csstype.d.ts';
-import * as JSS from '../../../../jss/v10.4.0/jss.d.ts';
-import { DefaultTheme } from './defaultTheme.d.ts';
+} from "../../../../csstype/v3.0.2/csstype.d.ts";
+import * as JSS from "../../../../jss/v10.4.0/jss.d.ts";
+import { DefaultTheme } from "./defaultTheme.d.ts";
 
 // Disable automatic export
 export {};
@@ -18,7 +18,7 @@ type PropsFunc<Props extends object, T> = (props: Props) => T;
  * Allows the user to augment the properties available
  */
 export interface BaseCSSProperties extends Properties<number | string> {
-  '@font-face'?: JSSFontface | JSSFontface[];
+  "@font-face"?: JSSFontface | JSSFontface[];
 }
 
 export interface CSSProperties extends BaseCSSProperties {
@@ -34,7 +34,9 @@ export interface CSSProperties extends BaseCSSProperties {
 }
 
 export type BaseCreateCSSProperties<Props extends object = {}> = {
-  [P in keyof BaseCSSProperties]: BaseCSSProperties[P] | PropsFunc<Props, BaseCSSProperties[P]>;
+  [P in keyof BaseCSSProperties]:
+    | BaseCSSProperties[P]
+    | PropsFunc<Props, BaseCSSProperties[P]>;
 };
 
 export interface CreateCSSProperties<Props extends object = {}>
@@ -53,7 +55,10 @@ export interface CreateCSSProperties<Props extends object = {}>
  *
  * if only `CSSProperties` are matched `Props` are inferred to `any`
  */
-export type StyleRules<Props extends object = {}, ClassKey extends string = string> = Record<
+export type StyleRules<
+  Props extends object = {},
+  ClassKey extends string = string,
+> = Record<
   ClassKey,
   // JSS property bag
   | CSSProperties
@@ -66,48 +71,63 @@ export type StyleRules<Props extends object = {}, ClassKey extends string = stri
 /**
  * @internal
  */
-export type StyleRulesCallback<Theme, Props extends object, ClassKey extends string = string> = (
-  theme: Theme
+export type StyleRulesCallback<
+  Theme,
+  Props extends object,
+  ClassKey extends string = string,
+> = (
+  theme: Theme,
 ) => StyleRules<Props, ClassKey>;
 
-export type Styles<Theme, Props extends object, ClassKey extends string = string> =
+export type Styles<
+  Theme,
+  Props extends object,
+  ClassKey extends string = string,
+> =
   | StyleRules<Props, ClassKey>
   | StyleRulesCallback<Theme, Props, ClassKey>;
 
-export interface WithStylesOptions<Theme = DefaultTheme> extends JSS.StyleSheetFactoryOptions {
+export interface WithStylesOptions<Theme = DefaultTheme>
+  extends JSS.StyleSheetFactoryOptions {
   defaultTheme?: Theme;
   flip?: boolean;
   withTheme?: boolean;
   name?: string;
 }
 
-export type ClassNameMap<ClassKey extends string = string> = Record<ClassKey, string>;
+export type ClassNameMap<ClassKey extends string = string> = Record<
+  ClassKey,
+  string
+>;
 
 /**
  * @internal
  */
-export type ClassKeyInferable<Theme, Props extends object> = string | Styles<Theme, Props>;
+export type ClassKeyInferable<Theme, Props extends object> =
+  | string
+  | Styles<Theme, Props>;
 export type ClassKeyOfStyles<StylesOrClassKey> = StylesOrClassKey extends string
   ? StylesOrClassKey
   : StylesOrClassKey extends StyleRulesCallback<any, any, infer ClassKey>
-  ? ClassKey
-  : StylesOrClassKey extends StyleRules<any, infer ClassKey>
-  ? ClassKey
+    ? ClassKey
+  : StylesOrClassKey extends StyleRules<any, infer ClassKey> ? ClassKey
   : never;
 
 /**
  * infers the type of the props used in the styles
  */
-export type PropsOfStyles<StylesType> = StylesType extends Styles<any, infer Props> ? Props : {};
+export type PropsOfStyles<StylesType> = StylesType extends
+  Styles<any, infer Props> ? Props : {};
 
 /**
  * infers the type of the theme used in the styles
  */
-export type ThemeOfStyles<StylesType> = StylesType extends Styles<infer Theme, any> ? Theme : {};
+export type ThemeOfStyles<StylesType> = StylesType extends
+  Styles<infer Theme, any> ? Theme : {};
 
 export type WithStyles<
   StylesType extends ClassKeyInferable<any, any>,
-  IncludeTheme extends boolean | undefined = false
+  IncludeTheme extends boolean | undefined = false,
 > = (IncludeTheme extends true ? { theme: ThemeOfStyles<StylesType> } : {}) & {
   classes: ClassNameMap<ClassKeyOfStyles<StylesType>>;
   innerRef?: React.Ref<any>;
@@ -126,8 +146,8 @@ export default function withStyles<
   Options extends WithStylesOptions<ThemeOfStyles<StylesType>> = {}
 >(
   style: StylesType,
-  options?: Options
+  options?: Options,
 ): PropInjector<
-  WithStyles<StylesType, Options['withTheme']>,
+  WithStyles<StylesType, Options["withTheme"]>,
   StyledComponentProps<ClassKeyOfStyles<StylesType>> & PropsOfStyles<StylesType>
 >;

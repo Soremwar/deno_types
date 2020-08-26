@@ -1,114 +1,119 @@
-import { Component, ReactNode } from '../../../react/v16.13.1/react.d.ts';
+import { Component, ReactNode } from "../../../react/v16.13.1/react.d.ts";
 
 type RefHandler<
-    RefElement extends undefined | HTMLElement,
-    ImplicitRefHandler extends (node: HTMLElement, ...args: any[]) => void,
-    ExplicitRefHandler extends (...args: any[]) => void
+  RefElement extends undefined | HTMLElement,
+  ImplicitRefHandler extends (node: HTMLElement, ...args: any[]) => void,
+  ExplicitRefHandler extends (...args: any[]) => void,
 > = {
-    implicit: ImplicitRefHandler;
-    explicit: ExplicitRefHandler;
-}[RefElement extends undefined ? 'implicit' : 'explicit'];
+  implicit: ImplicitRefHandler;
+  explicit: ExplicitRefHandler;
+}[RefElement extends undefined ? "implicit" : "explicit"];
 
 export type EndHandler<RefElement extends undefined | HTMLElement> = RefHandler<
-    RefElement,
-    (node: HTMLElement, done: () => void) => void,
-    (done: () => void) => void
+  RefElement,
+  (node: HTMLElement, done: () => void) => void,
+  (done: () => void) => void
 >;
 
-export type EnterHandler<RefElement extends undefined | HTMLElement> = RefHandler<
+export type EnterHandler<RefElement extends undefined | HTMLElement> =
+  RefHandler<
     RefElement,
     (node: HTMLElement, isAppearing: boolean) => void,
     (isAppearing: boolean) => void
+  >;
+
+export type ExitHandler<E extends undefined | HTMLElement> = RefHandler<
+  E,
+  (node: HTMLElement) => void,
+  () => void
 >;
 
-export type ExitHandler<E extends undefined | HTMLElement> = RefHandler<E, (node: HTMLElement) => void, () => void>;
-
-export const UNMOUNTED = 'unmounted';
-export const EXITED = 'exited';
-export const ENTERING = 'entering';
-export const ENTERED = 'entered';
-export const EXITING = 'exiting';
+export const UNMOUNTED = "unmounted";
+export const EXITED = "exited";
+export const ENTERING = "entering";
+export const ENTERED = "entered";
+export const EXITING = "exiting";
 
 export interface TransitionActions {
-    /**
+  /**
      * Normally a component is not transitioned if it is shown when the
      * `<Transition>` component mounts. If you want to transition on the first
      * mount set  appear to true, and the component will transition in as soon
      * as the `<Transition>` mounts. Note: there are no specific "appear" states.
      * appear only adds an additional enter transition.
      */
-    appear?: boolean;
+  appear?: boolean;
 
-    /**
+  /**
      * Enable or disable enter transitions.
      */
-    enter?: boolean;
+  enter?: boolean;
 
-    /**
+  /**
      * Enable or disable exit transitions.
      */
-    exit?: boolean;
+  exit?: boolean;
 }
 
 interface BaseTransitionProps<RefElement extends undefined | HTMLElement> {
-    /**
+  /**
      * Show the component; triggers the enter or exit states
      */
-    in?: boolean;
+  in?: boolean;
 
-    /**
+  /**
      * By default the child component is mounted immediately along with the
      * parent Transition component. If you want to "lazy mount" the component on
      * the first `in={true}` you can set `mountOnEnter`. After the first enter
      * transition the component will stay mounted, even on "exited", unless you
      * also specify `unmountOnExit`.
      */
-    mountOnEnter?: boolean;
+  mountOnEnter?: boolean;
 
-    /**
+  /**
      * By default the child component stays mounted after it reaches the
      * 'exited' state. Set `unmountOnExit` if you'd prefer to unmount the
      * component after it finishes exiting.
      */
-    unmountOnExit?: boolean;
+  unmountOnExit?: boolean;
 
-    /**
+  /**
      * Callback fired before the "entering" status is applied. An extra
      * parameter `isAppearing` is supplied to indicate if the enter stage is
      * occurring on the initial mount
      */
-    onEnter?: EnterHandler<RefElement>;
+  onEnter?: EnterHandler<RefElement>;
 
-    /**
+  /**
      * Callback fired after the "entering" status is applied. An extra parameter
      * isAppearing is supplied to indicate if the enter stage is occurring on
      * the initial mount
      */
-    onEntering?: EnterHandler<RefElement>;
+  onEntering?: EnterHandler<RefElement>;
 
-    /**
+  /**
      * Callback fired after the "entered" status is applied. An extra parameter
      * isAppearing is supplied to indicate if the enter stage is occurring on
      * the initial mount
      */
-    onEntered?: EnterHandler<RefElement>;
+  onEntered?: EnterHandler<RefElement>;
 
-    /**
+  /**
      * Callback fired before the "exiting" status is applied.
      */
-    onExit?: ExitHandler<RefElement>;
+  onExit?: ExitHandler<RefElement>;
 
-    /**
+  /**
      * Callback fired after the "exiting" status is applied.
      */
-    onExiting?: ExitHandler<RefElement>;
+  onExiting?: ExitHandler<RefElement>;
 
-    /**
+  /**
      * Callback fired after the "exited" status is applied.
      */
-    onExited?: ExitHandler<RefElement>;
+  onExited?: ExitHandler<RefElement>;
 
-    /**
+  /**
      * A function child can be used instead of a React element. This function is
      * called with the current transition status ('entering', 'entered',
      * 'exiting',  'exited', 'unmounted'), which can be used to apply context
@@ -121,24 +126,32 @@ interface BaseTransitionProps<RefElement extends undefined | HTMLElement> {
      *    </Transition>
      * ```
      */
-    children?: TransitionChildren;
+  children?: TransitionChildren;
 
-    /**
+  /**
      * A React reference to DOM element that need to transition: https://stackoverflow.com/a/51127130/4671932
      * When `nodeRef` prop is used, node is not passed to callback functions (e.g. onEnter) because user already has direct access to the node.
      * When changing `key` prop of `Transition` in a `TransitionGroup` a new `nodeRef` need to be provided to `Transition` with changed `key`
      * prop (@see https://github.com/reactjs/react-transition-group/blob/master/test/Transition-test.js).
      */
-    nodeRef?: React.Ref<RefElement>;
+  nodeRef?: React.Ref<RefElement>;
 
-    [prop: string]: any;
+  [prop: string]: any;
 }
 
-export type TransitionStatus = typeof ENTERING | typeof ENTERED | typeof EXITING | typeof EXITED | typeof UNMOUNTED;
-export type TransitionChildren = ReactNode | ((status: TransitionStatus) => ReactNode);
+export type TransitionStatus =
+  | typeof ENTERING
+  | typeof ENTERED
+  | typeof EXITING
+  | typeof EXITED
+  | typeof UNMOUNTED;
+export type TransitionChildren =
+  | ReactNode
+  | ((status: TransitionStatus) => ReactNode);
 
-interface TimeoutProps<RefElement extends undefined | HTMLElement> extends BaseTransitionProps<RefElement> {
-    /**
+interface TimeoutProps<RefElement extends undefined | HTMLElement>
+  extends BaseTransitionProps<RefElement> {
+  /**
      * The duration of the transition, in milliseconds. Required unless addEndListener is provided.
      *
      * You may specify a single timeout for all transitions:
@@ -157,18 +170,19 @@ interface TimeoutProps<RefElement extends undefined | HTMLElement> extends BaseT
      * - enter defaults to `0`
      * - exit defaults to `0`
      */
-    timeout: number | { appear?: number; enter?: number; exit?: number };
+  timeout: number | { appear?: number; enter?: number; exit?: number };
 
-    /**
+  /**
      * Add a custom transition end trigger. Called with the transitioning DOM
      * node and a done callback. Allows for more fine grained transition end
      * logic. Note: Timeouts are still used as a fallback if provided.
      */
-    addEndListener?: EndHandler<RefElement>;
+  addEndListener?: EndHandler<RefElement>;
 }
 
-interface EndListenerProps<Ref extends undefined | HTMLElement> extends BaseTransitionProps<Ref> {
-    /**
+interface EndListenerProps<Ref extends undefined | HTMLElement>
+  extends BaseTransitionProps<Ref> {
+  /**
      * The duration of the transition, in milliseconds. Required unless addEndListener is provided.
      *
      * You may specify a single timeout for all transitions:
@@ -187,18 +201,20 @@ interface EndListenerProps<Ref extends undefined | HTMLElement> extends BaseTran
      * - enter defaults to `0`
      * - exit defaults to `0`
      */
-    timeout?: number | { appear?: number; enter?: number; exit?: number };
-    /**
+  timeout?: number | { appear?: number; enter?: number; exit?: number };
+  /**
      * Add a custom transition end trigger. Called with the transitioning DOM
      * node and a done callback. Allows for more fine grained transition end
      * logic. Note: Timeouts are still used as a fallback if provided.
      */
-    addEndListener: EndHandler<Ref>;
+  addEndListener: EndHandler<Ref>;
 }
 
-export type TransitionProps<RefElement extends undefined | HTMLElement = undefined> =
-    | TimeoutProps<RefElement>
-    | EndListenerProps<RefElement>;
+export type TransitionProps<
+  RefElement extends undefined | HTMLElement = undefined,
+> =
+  | TimeoutProps<RefElement>
+  | EndListenerProps<RefElement>;
 
 /**
  * The Transition component lets you describe a transition from one component
@@ -241,6 +257,7 @@ export type TransitionProps<RefElement extends undefined | HTMLElement = undefin
  * ```
  *
  */
-declare class Transition<RefElement extends HTMLElement | undefined> extends Component<TransitionProps<RefElement>> {}
+declare class Transition<RefElement extends HTMLElement | undefined>
+  extends Component<TransitionProps<RefElement>> {}
 
 export default Transition;

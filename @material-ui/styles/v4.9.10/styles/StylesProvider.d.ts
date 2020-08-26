@@ -1,4 +1,4 @@
-import { GenerateId, Jss } from '../../../../jss/v10.4.0/jss.d.ts';
+import { GenerateId, Jss } from "../../../../jss/v10.4.0/jss.d.ts";
 
 export interface StylesOptions {
   disableGeneration?: boolean;

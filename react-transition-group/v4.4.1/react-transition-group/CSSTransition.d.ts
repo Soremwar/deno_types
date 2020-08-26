@@ -1,20 +1,22 @@
-import { Component } from '../../../react/v16.13.1/react.d.ts';
+import { Component } from "../../../react/v16.13.1/react.d.ts";
 import { TransitionProps } from "./Transition.d.ts";
 
 export interface CSSTransitionClassNames {
-    appear?: string;
-    appearActive?: string;
-    appearDone?: string;
-    enter?: string;
-    enterActive?: string;
-    enterDone?: string;
-    exit?: string;
-    exitActive?: string;
-    exitDone?: string;
+  appear?: string;
+  appearActive?: string;
+  appearDone?: string;
+  enter?: string;
+  enterActive?: string;
+  enterDone?: string;
+  exit?: string;
+  exitActive?: string;
+  exitDone?: string;
 }
 
-export type CSSTransitionProps<Ref extends undefined | HTMLElement = undefined> = TransitionProps<Ref> & {
-    /**
+export type CSSTransitionProps<
+  Ref extends undefined | HTMLElement = undefined,
+> = TransitionProps<Ref> & {
+  /**
      * The animation `classNames` applied to the component as it enters or exits.
      * A single name can be provided and it will be suffixed for each stage: e.g.
      *
@@ -37,9 +39,10 @@ export type CSSTransitionProps<Ref extends undefined | HTMLElement = undefined> 
      * }}
      * ```
      */
-    classNames?: string | CSSTransitionClassNames;
+  classNames?: string | CSSTransitionClassNames;
 };
 
-declare class CSSTransition<Ref extends undefined | HTMLElement> extends Component<CSSTransitionProps<Ref>> {}
+declare class CSSTransition<Ref extends undefined | HTMLElement>
+  extends Component<CSSTransitionProps<Ref>> {}
 
 export default CSSTransition;

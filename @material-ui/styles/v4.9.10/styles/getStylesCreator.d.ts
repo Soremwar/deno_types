@@ -1,11 +1,15 @@
-import { StyleRules, Styles } from './withStyles.d.ts';
+import { StyleRules, Styles } from "./withStyles.d.ts";
 
-export interface StylesCreator<Theme, Props extends object, ClassKey extends string = string> {
+export interface StylesCreator<
+  Theme,
+  Props extends object,
+  ClassKey extends string = string,
+> {
   create: (theme: Theme, name: string) => StyleRules<Props, ClassKey>;
   options: {};
   themingEnabled: boolean;
 }
 
 export default function getStylesCreator<S extends Styles<any, any>>(
-  style: S
+  style: S,
 ): StylesCreator<any, any>;

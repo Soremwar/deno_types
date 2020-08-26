@@ -1,5 +1,5 @@
 export interface Config {
-    disabled: boolean;
+  disabled: boolean;
 }
 
 declare const config: Config;

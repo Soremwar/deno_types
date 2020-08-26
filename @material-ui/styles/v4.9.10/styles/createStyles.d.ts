@@ -1,4 +1,4 @@
-import { StyleRules } from './withStyles.d.ts';
+import { StyleRules } from "./withStyles.d.ts";
 
 /**
  * This function doesn't really "do anything" at runtime, it's just the identity
@@ -12,5 +12,5 @@ import { StyleRules } from './withStyles.d.ts';
 // See https://github.com/mui-org/material-ui/issues/15942
 // and https://github.com/microsoft/TypeScript/issues/31735
 export default function createStyles<ClassKey extends string, Props extends {}>(
-  styles: StyleRules<Props, ClassKey>
+  styles: StyleRules<Props, ClassKey>,
 ): StyleRules<Props, ClassKey>;

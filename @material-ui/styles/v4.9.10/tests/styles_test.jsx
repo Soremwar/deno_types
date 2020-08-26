@@ -10,18 +10,18 @@ Deno.test(
   () => {
     const useStyles = styles.makeStyles({
       root: {
-        color: 'red',
+        color: "red",
       },
     });
-    
+
     const Test = () => {
       const classes = useStyles();
-    
+
       return (
         <h1 className={classes.root}>This works!</h1>
       );
-    }
-    
-    ReactDOMServer.renderToString(<Test/>);
+    };
+
+    ReactDOMServer.renderToString(<Test />);
   },
 );
