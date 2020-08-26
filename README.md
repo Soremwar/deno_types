@@ -11,6 +11,7 @@ located here have been validated to work with Deno.
 ## Available libraries
 
 - JSS
+- Material UI - Styles
 - Material UI - System
 - PropTypes
 - React
