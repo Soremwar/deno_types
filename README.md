@@ -10,6 +10,7 @@ located here have been validated to work with Deno.
 
 ## Available libraries
 
+- JSS
 - PropTypes
 - React
 - React Linked State Mixin
@@ -42,12 +43,13 @@ JSPM transformation of most libraries export everything through the default
 namespace, so most of the time it might not be suited to work along with this
 definition library.
 
-
 ## Contributing
 
 Feel free to open an issue about a module you would like to see in this library.
 If you would like to add a package to this list, open a pull request and I'll
 review it as fast as possible.
+
+### Structure
 
 All the libraries added must follow the following structure
 
@@ -60,4 +62,14 @@ All the libraries added must follow the following structure
 │       ├── tests                           # Folder containing tests for the library
 │           ├── definition_file_test.ts     # The definitions in this file should map to the main entrypoint of the library. The tests should use the Deno test library
 └── ...
+```
+
+### Testing
+
+If the test files follow the test pattern they should be picked by deno test
+
+To run the test suite simply run the following command (Deno v1.3+)
+
+```
+deno test -c tsconfig.json
 ```
