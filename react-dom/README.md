@@ -13,7 +13,7 @@ import ReactDOM from "https://cdn.pika.dev/react-dom@16.13.1";
 ```
 
 ```typescript
-// @deno-types="https://denopkg.com/soremwar/deno_types/react-dom/v16.9.0/server.d.ts"
+// @deno-types="https://denopkg.com/soremwar/deno_types/react-dom/v16.13.1/server.d.ts"
 import ReactDomServer from "https://dev.jspm.io/react-dom@16.13.1/server.js";
 ```
 
