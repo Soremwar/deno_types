@@ -38,7 +38,7 @@ or
 
 ```typescript
 // @deno-types="https://denopkg.com/soremwar/deno_types/react/v16.13.1/react.d.ts"
-import React from "https://dev.jspm.io/react@16.13.1";
+import React from "https://jspm.dev/react@16.13.1";
 ```
 
 #### Notes:
